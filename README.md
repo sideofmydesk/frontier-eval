@@ -20,7 +20,7 @@ Fifteen real pull requests were each reviewed with and without the plugin, on Cl
 | Opus 5.5 | With the plugin | 31% | 53% | 2.1 | $0.60 |
 | Opus 5.5 | Without it | 66% | 21% | 11.3 | $0.41 |
 | Fable 5.2 | With the plugin | 32% | 43% | 2.5 | $1.75 |
-| Fable 5.2 | Without it | 73% | 27% | 10.1 | $1.14 |
+| Fable 5.2 | Without it | 73% | 26% | 10.1 | $1.14 |
 
 **Read this as a first look.** The study is small, the test set is public, an AI did the grading, and no pass marks were set ahead of time. No person checked the grading. The paper's section "What this study cannot show" lists the limits.
 
