@@ -61,7 +61,7 @@ This work was done with a great deal of help from Claude Code, Anthropic's AI co
 
 ## Licence and contact
 
-The paper, figures, and results are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). No licence has yet been chosen for the code.
+The paper, figures, and results are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The code is licensed under the [MIT License](LICENSE), so you are free to use and change it.
 
 Questions and corrections: research@sideofmydesk.com
 
