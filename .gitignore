@@ -1,0 +1,12 @@
+# Secrets: never commit API keys or environment files
+.env
+.env.*
+!.env.example
+
+# LaTeX build files
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.txt

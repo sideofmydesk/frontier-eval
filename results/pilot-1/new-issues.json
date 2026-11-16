@@ -1,0 +1,1438 @@
+[
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Existing-attendee duplicate check in addGuests.handler.ts is case-sensitive, so same person is added and emailed twice",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Calendar update in addGuests.handler.ts uses caller's credentials (ctx.user) instead of the organizer's",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "MultiEmail.tsx 'Remove email' tooltip is hardcoded rather than translated",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "MultiEmail.tsx uses key={index} on a list with removable items, shifting DOM state",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Guests are saved before the calendar update with no rollback or try/catch, so a calendar failure leaves guests saved without emails and retry fails on uniqueness",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Handler lacks checks for booking status (cancelled, rejected, past), disableGuests, and seat limits, allowing guests to be added improperly",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Email send failures are swallowed with a fixed console.log string, dropping the error instead of using logger",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "AddGuestsDialog isInvalidEmail error and entered emails are not reset on edit, success, or closing via Esc/outside click",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "AddGuestsDialog error toast fallback t('unable_to_add_guests') never fires because template string is always truthy, showing 'undefined: ...'",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Client-side uniqueness check in AddGuestsDialog is case-sensitive (and schema rebuilt each render)",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "MultiEmail label htmlFor='emails' matches no input id, so label is not associated (accessibility)",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "sendAddGuestsEmails is called with the raw guests list instead of uniqueGuests, so existing attendees get a new-booking email",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/plugin"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Team members are not notified because the handler never sets evt.team",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Empty-list guard in AddGuestsDialog is dead code, so Add with no rows gives no feedback",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Attendee permission check is case-sensitive and lets any attendee email arbitrary addresses under organizer's name",
+  "category": "security",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "Seated events leak attendee data to all seat holders when seatsShowAttendees is false",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-001",
+  "project": "cal_dot_com",
+  "title": "New guests are created with an empty name, causing blank greetings and malformed To headers",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "getBaseConditions/getFilterConditions return unparenthesised SQL fragments, so a caller's extra AND can escape the authorization scope when a top-level OR is present",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "Test interpolates baseConditions directly into WHERE and only covers user scope with a filter, never exercising the top-level OR case",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "InsightsBookingServicePublicOptions loosens the constructor options type (optional teamId), so invalid team scope compiles but fails safeParse at runtime and silently returns 1=0",
+  "category": "api",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "Caching tests were deleted without replacement, leaving cachedAuthConditions and cachedFilterConditions untested",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 6
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "Tests only compare SQL strings and run only the user-scope query against the database; team/org OR queries and ANY(array) binding are never executed in Postgres",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-002",
+  "project": "cal_dot_com",
+  "title": "Dead if (index === 0) guards in the reduce calls never fire because reduce without initial value starts at index 1",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "fable52/plugin"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-003",
+  "project": "cal_dot_com",
+  "title": "App-store map in packages/app-store/index.ts uses eager import() promises instead of loader functions, so all app modules still load at startup and lazy loading is not achieved",
+  "category": "perf",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 5
+ },
+ {
+  "case": "fe-case-003",
+  "project": "cal_dot_com",
+  "title": "getCalendarCredentials in CalendarManager.ts calls getCalendar without await, so calendar is a floating Promise, unhandled rejections for discarded credentials, and the exported shape silently changed",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Stored XSS: unescaped embed URL interpolated into href and link text of the imported-post footer in topic_embed.rb",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Stored XSS: raw_html posts bypass sanitization (cook returns raw), imported feed/Readability content unsanitized, javascript: links allowed",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Non-atomic setnx then expire in topic_retriever throttle can leave key without TTL; use SET NX EX",
+  "category": "concurrency",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "embed_url column is a 255-char string so longer URLs fail on insert",
+  "category": "data",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "poll_feed specs pass vacuously because feed_polling_enabled? is never enabled",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Unbounded anonymous topic creation: per-URL throttle and no URL normalization allow varying query strings to create topics and fetches",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Protocol-relative URLs are mangled in URL rewriting (sub strips both slashes)",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Relative URLs without a leading slash are not absolutized",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Disqus importer needs a live HTTP fetch per thread, so one failure aborts the whole import",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Disqus importer no longer applies original created_at to topics",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Disqus importer --category option removed so topics land in default category",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Disqus importer multiple regressions summarized (category, created_at, live fetch, silent skipping, re-run duplicates)",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "import mutates its argument string with << and fails on frozen strings",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Migrations use force: true, edit a shipped migration, and have whitespace churn",
+  "category": "data",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "URL scheme regex uses ^ instead of \\A so multiline values bypass the check",
+  "category": "security",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Kernel#open on URLs allows command execution via leading '|' and lacks open-uri require",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Deleted posts or topics break embeds (nil post in PostRevisor, deleted topic id in TopicView)",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Port check ignores scheme so http://host:443 or https://host:80 loses its port",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Loading page reloads forever and enqueues RetrieveTopic every request due to unvalidated host and unrecorded failures",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Regex ^ allows multi-line values and << mutates caller's string",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "embed.js assumes discourseUrl ends with a slash",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "feed_key in poll_feed.rb is unused so feed is fully fetched every hour",
+  "category": "perf",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Unneeded require of email/sender in retrieve_topic.rb",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-004",
+  "project": "discourse",
+  "title": "Migrations use force: true, silently dropping existing tables, and one edits an already-shipped migration; embed_url as a 255-char string fails to insert longer URLs",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-005",
+  "project": "discourse",
+  "title": "The downsize loop in uploads_controller ignores OptimizedImage.downsize's return value, so failed conversions are retried five times with identical input",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-005",
+  "project": "discourse",
+  "title": "uploads_controller has no final size check after downsize attempts, so images over the limit are accepted and max_image_size_kb is not enforced",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-005",
+  "project": "discourse",
+  "title": "API URL downloads in uploads_controller are capped at a hardcoded 10 MB, ignoring size settings and truncating larger uploads",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-005",
+  "project": "discourse",
+  "title": "Repeated in-place downsize attempts re-encode the image up to five times, degrading quality instead of resizing once",
+  "category": "perf",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-005",
+  "project": "discourse",
+  "title": "No tests cover the new downsizing path or the changed OptimizedImage method signatures",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-006",
+  "project": "discourse",
+  "title": "I18n fallbacks are now enabled in all environments (including development and test), so missing translations silently fall back to English instead of surfacing 'translation missing'",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-007",
+  "project": "grafana",
+  "title": "updateDevice prepends query to captured args inside the WithDbSession callback, so a SQLite busy/locked retry passes corrupted arguments to Exec (also in CreateOrUpdateDevice)",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-007",
+  "project": "grafana",
+  "title": "New device_limit setting is undocumented in defaults.ini, sample.ini and docs, and negative values are silently treated as unlimited",
+  "category": "doc_defect",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-007",
+  "project": "grafana",
+  "title": "Test only covers rejection of a new device at the limit, not an existing device updating at the limit, nor the service/cache path",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-007",
+  "project": "grafana",
+  "title": "Device tagging now runs synchronously on the anonymous request path, removing background goroutine, timeout and panic recovery, adding latency and failure coupling",
+  "category": "perf",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-007",
+  "project": "grafana",
+  "title": "anonymousDeviceLimit in config.ts lacks a type annotation (inferred as undefined) and mismatches the backend always sending a number",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Async legacy write goroutines in mode 3 derive their timeout context from the request ctx, which is cancelled when the handler returns; should use context.WithoutCancel",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 8
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Create records a failed Storage.Create with recordLegacyDuration instead of recordStorageDuration",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 6
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Update records a failed Storage.Update with recordLegacyDuration instead of recordStorageDuration",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 5
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Create and Update record storage failures as legacy failures (combined report)",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/plugin",
+   "opus55/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Stale misleading test name about listing not implemented in unified store",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "go.work.sum contains a duplicate apimachinery go.mod entry",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Legacy write errors in async goroutines are never logged",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Update passes raw objInfo to legacy instead of wrapping the unified storage result (updateWrapper), risking divergence",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Create passes the original obj to legacy instead of the created object (needs deep copy)",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Delete returns early on NotFound from unified storage, so legacy-only objects can't be deleted",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Create test cases share a single mock between legacy and storage, so 'unified store fails' case passes by accident",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-008",
+  "project": "grafana",
+  "title": "Mode 3 tests don't verify async legacy writes or wait for goroutines",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-009",
+  "project": "grafana",
+  "title": "LoggerMiddleware depends on ContextualLoggerMiddleware running first, with ordering undocumented and unenforced, so plugin/datasource fields can silently vanish from logs",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-009",
+  "project": "grafana",
+  "title": "FromContext doc comment in pkg/plugins/log/ifaces.go is copy-pasted from New and does not describe context attributes",
+  "category": "doc_defect",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-009",
+  "project": "grafana",
+  "title": "No tests cover the new ContextualLoggerMiddleware, FromContext, or changed LoggerMiddleware output",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-009",
+  "project": "grafana",
+  "title": "Test in metrics_middleware_test.go still named TestInstrumentationMiddleware after the file rename",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "canExchangeTo in ClientPermissionsV2 throws UnsupportedOperationException, so token exchange with V2 enabled returns 500 instead of a clean denial",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "Wrong Javadoc on requireView() and requireViewClientScopes() in ClientPermissionEvaluator says they return true although they are void and throw ForbiddenException",
+  "category": "doc_defect",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "PermissionClientTest creates roles and role mappings and modifies the shared realm without cleanup",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "PermissionClientTest uses JUnit 4 org.junit.Assert.fail in a JUnit 5 test",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "removeDefaultClientScope check in PermissionClientTest cannot fail because getDefaultClientScopes already throws before the grant",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "Per-client view deny is ignored when all-clients view is granted because canView(ClientModel) short-circuits on canView()",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "hasPermission(ClientModel, String) all-clients fallback lets a single-client manage grant apply to every client without its own permission",
+  "category": "security",
+  "severity": "High",
+  "found_by": [
+   "fable52/plugin"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "canView() only checks view permission while canManageClientScopes and canView(ClientScopeModel) accept manage, so all-clients manage admins get 403 on viewing client scopes",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "canView(client) evaluates policies repeatedly, which is expensive when listing clients; should evaluate once with multiple scopes",
+  "category": "perf",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-010",
+  "project": "keycloak",
+  "title": "Test calls clients().create(null) with a null body, so the 403 does not prove refusal due to lack of permission",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Federated path in CredentialHelper passes only the raw code list to user storage, dropping generatedAt and user label metadata",
+  "category": "data",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Typo 'delayed-suthenticator-config' in test config alias",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Test provider getCredentials throws NPE when getMyUser returns null",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Plaintext recovery codes are sent unhashed to user storage while the local path stores hashes",
+  "category": "security",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Test calls testAppHelper.logout() without asserting the result",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Test does not verify code consumption or rejection of used codes",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "Old local recovery codes stay valid after new codes are saved to user storage because local credential is not removed",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-011",
+  "project": "keycloak",
+  "title": "CredentialHelper hardcodes provider ID string and looks up provider even when storage succeeds",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-012",
+  "project": "keycloak",
+  "title": "Test's reader thread is non-daemon and deletedAll.set(true) is not in a finally block, so a failing remove() leaves it spinning forever and may block JVM exit",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-012",
+  "project": "keycloak",
+  "title": "Test may pass without exercising the race because nothing ensures the reader performed requests during the delete phase",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-012",
+  "project": "keycloak",
+  "title": "Minor style cleanup in test: typo groupUuuids, stray whitespace line, empty line in catch block",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Shared FixedQueuePool is shut down by strategy close/terminate/join and reused after rebalance, so new strategies submit to a dead pool and offsets are committed for dropped messages",
+  "category": "data",
+  "severity": "Critical",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline",
+   "opus55/plugin"
+  ],
+  "n_runs": 8
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "submit() catch-all marks the offset complete on any exception (including ShutDown), silently committing unprocessed messages",
+  "category": "data",
+  "severity": "High",
+  "found_by": [
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Queues are unbounded and submit never raises MessageRejected, so there is no backpressure and memory grows without bound",
+  "category": "perf",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 4
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Shutdown is not graceful: worker.shutdown is set before q.shutdown so queues are not drained",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "close() stops the commit thread before workers finish and does no final commit, so completed work is reprocessed",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "join(timeout) ignores its timeout argument, so shutdown can block for a long time",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Combined shutdown defects: not graceful, commit thread stopped early, join ignores timeout, no final commit",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Gaps in Kafka offsets stall commits for the partition forever and tracker state grows unbounded",
+  "category": "bug",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Filtered payloads trip the decode_payload assertion and are logged as exceptions instead of being skipped quietly",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Queue-depth gauge emitted by every worker with only the identifier tag, so values overwrite each other",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Stats test asserting total_items > 0 right after submit is racy",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Tests leak commit/worker threads because strategies are never closed and there is no try/finally",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Docstring claims offsets are committed only after successful processing but failed messages are completed anyway",
+  "category": "doc_defect",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Offsets are committed from a background thread, which is not thread-safe with Arroyo and can commit revoked partitions",
+  "category": "concurrency",
+  "severity": "High",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "test_different_groups_distributed relies on string hashing to cover all queues and is flaky",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Offset tracker state is not reset across rebalances, so revoked partitions are committed and stale last_committed ignores redelivered offsets",
+  "category": "bug",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "offsets_committed metric uses len(committable), counting partitions rather than offsets",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Graceful shutdown test does not mock processing and only asserts queue_pool is None, so it does not test graceful shutdown",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-013",
+  "project": "sentry",
+  "title": "Tests assert incorrect behavior and are timing-dependent (error-commit test, gap tests, partial first commit waits)",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "opus55/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-014",
+  "project": "sentry",
+  "title": "assignment_source parameter was added to abstract sync_status_outbound instead of sync_assignee_outbound in mixins/issues.py, leaving the base-class contract wrong for both methods",
+  "category": "api",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 5
+ },
+ {
+  "case": "fe-case-014",
+  "project": "sentry",
+  "title": "test_to_dict only asserts queued is not None, so it does not catch the stale import-time default timestamp bug",
+  "category": "test_gap",
+  "severity": "Low",
+  "found_by": [
+   "fable52/plugin",
+   "opus55/plugin"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-014",
+  "project": "sentry",
+  "title": "Missing tests in test_groupassignee.py for the deassign path, different-integration source still syncing, and inbound source pass-through",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "fable52/baseline"
+  ],
+  "n_runs": 2
+ },
+ {
+  "case": "fe-case-015",
+  "project": "sentry",
+  "title": "Stale TODO comment above MetricAlertDetectorHandler in incidents/grouptype.py saying it will be a stateful detector when the class already subclasses StatefulDetectorHandler",
+  "category": "doc_defect",
+  "severity": "Low",
+  "found_by": [
+   "fable52/baseline",
+   "fable52/plugin",
+   "opus55/baseline"
+  ],
+  "n_runs": 3
+ },
+ {
+  "case": "fe-case-015",
+  "project": "sentry",
+  "title": "TestEvaluate tests (test_results_on_change, test_dedupe) use expected values that differ from inputs but pass due to weak equality",
+  "category": "test_gap",
+  "severity": "Medium",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-015",
+  "project": "sentry",
+  "title": "get_group_key_values return type declared dict[str, int] but tests pass {None: 6}; should be dict[DetectorGroupKey, int]",
+  "category": "bug",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ },
+ {
+  "case": "fe-case-015",
+  "project": "sentry",
+  "title": "Leftover unused test code: no-op TestProcessDetectors.setUp and ignored group_vals parameter in build_data_packet",
+  "category": "style",
+  "severity": "Low",
+  "found_by": [
+   "opus55/baseline"
+  ],
+  "n_runs": 1
+ }
+]

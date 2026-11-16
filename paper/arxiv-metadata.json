@@ -1,0 +1,879 @@
+{
+ "2311.11123": {
+  "title": "(Why) Is My Prompt Getting Worse? Rethinking Regression Testing for Evolving LLM APIs",
+  "authors": [
+   "Wanqin Ma",
+   "Chenyang Yang",
+   "Christian K\u00e4stner"
+  ],
+  "published": "2023-11-18"
+ },
+ "2203.09095": {
+  "title": "Automating Code Review Activities by Large-Scale Pre-training",
+  "authors": [
+   "Zhiyu Li",
+   "Shuai Lu",
+   "Daya Guo",
+   "Nan Duan",
+   "Shailesh Jannu",
+   "Grant Jenks",
+   "Deep Majumder",
+   "Jared Green",
+   "Alexey Svyatkovskiy",
+   "Shengyu Fu",
+   "Neel Sundaresan"
+  ],
+  "published": "2022-03-17"
+ },
+ "2411.02093": {
+  "title": "Do Advanced Language Models Eliminate the Need for Prompt Engineering in Software Engineering?",
+  "authors": [
+   "Guoqing Wang",
+   "Zeyu Sun",
+   "Zhihao Gong",
+   "Sixiang Ye",
+   "Yizhou Chen",
+   "Yifan Zhao",
+   "Qingyuan Liang",
+   "Dan Hao"
+  ],
+  "published": "2024-11-04"
+ },
+ "2407.01502": {
+  "title": "AI Agents That Matter",
+  "authors": [
+   "Sayash Kapoor",
+   "Benedikt Stroebl",
+   "Zachary S. Siegel",
+   "Nitya Nadgir",
+   "Arvind Narayanan"
+  ],
+  "published": "2024-07-01"
+ },
+ "2412.18531": {
+  "title": "Automated Code Review In Practice",
+  "authors": [
+   "Umut Cihan",
+   "Vahid Haratian",
+   "Arda \u0130\u00e7\u00f6z",
+   "Mert Kaan G\u00fcl",
+   "\u00d6mercan Devran",
+   "Emircan Furkan Bayendur",
+   "Baykal Mehmet U\u00e7ar",
+   "Eray T\u00fcz\u00fcn"
+  ],
+  "published": "2024-12-24"
+ },
+ "2411.13323": {
+  "title": "Are Large Language Models Memorizing Bug Benchmarks?",
+  "authors": [
+   "Daniel Ramos",
+   "Claudia Mamede",
+   "Kush Jain",
+   "Paulo Canelas",
+   "Catarina Gamboa",
+   "Claire Le Goues"
+  ],
+  "published": "2024-11-20"
+ },
+ "2311.10054": {
+  "title": "When \"A Helpful Assistant\" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models",
+  "authors": [
+   "Mingqian Zheng",
+   "Jiaxin Pei",
+   "Lajanugen Logeswaran",
+   "Moontae Lee",
+   "David Jurgens"
+  ],
+  "published": "2023-11-16"
+ },
+ "2402.05120": {
+  "title": "More Agents Is All You Need",
+  "authors": [
+   "Junyou Li",
+   "Qin Zhang",
+   "Yangbin Yu",
+   "Qiang Fu",
+   "Deheng Ye"
+  ],
+  "published": "2024-02-03"
+ },
+ "2410.20247": {
+  "title": "Model Equality Testing: Which Model Is This API Serving?",
+  "authors": [
+   "Irena Gao",
+   "Percy Liang",
+   "Carlos Guestrin"
+  ],
+  "published": "2024-10-26"
+ },
+ "2310.11324": {
+  "title": "Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting",
+  "authors": [
+   "Melanie Sclar",
+   "Yejin Choi",
+   "Yulia Tsvetkov",
+   "Alane Suhr"
+  ],
+  "published": "2023-10-17"
+ },
+ "2411.15594": {
+  "title": "A Survey on LLM-as-a-Judge",
+  "authors": [
+   "Jiawei Gu",
+   "Xuhui Jiang",
+   "Zhichao Shi",
+   "Hexiang Tan",
+   "Xuehao Zhai",
+   "Chengjin Xu",
+   "Wei Li",
+   "Yinghan Shen",
+   "Shengjie Ma",
+   "Honghao Liu",
+   "Saizhuo Wang",
+   "Kun Zhang",
+   "Yuanzhuo Wang",
+   "Wen Gao",
+   "Lionel Ni",
+   "Jian Guo"
+  ],
+  "published": "2024-11-23"
+ },
+ "2402.02172": {
+  "title": "CodeAgent: Autonomous Communicative Agents for Code Review",
+  "authors": [
+   "Xunzhu Tang",
+   "Kisub Kim",
+   "Yewei Song",
+   "Cedric Lothritz",
+   "Bei Li",
+   "Saad Ezzini",
+   "Haoye Tian",
+   "Jacques Klein",
+   "Tegawende F. Bissyande"
+  ],
+  "published": "2024-02-03"
+ },
+ "2401.00595": {
+  "title": "State of What Art? A Call for Multi-Prompt LLM Evaluation",
+  "authors": [
+   "Moran Mizrahi",
+   "Guy Kaplan",
+   "Dan Malkin",
+   "Rotem Dror",
+   "Dafna Shahaf",
+   "Gabriel Stanovsky"
+  ],
+  "published": "2023-12-31"
+ },
+ "2411.00640": {
+  "title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+  "authors": [
+   "Evan Miller"
+  ],
+  "published": "2024-11-01"
+ },
+ "2411.03590": {
+  "title": "From Medprompt to o1: Exploration of Run-Time Strategies for Medical Challenge Problems and Beyond",
+  "authors": [
+   "Harsha Nori",
+   "Naoto Usuyama",
+   "Nicholas King",
+   "Scott Mayer McKinney",
+   "Xavier Fernandes",
+   "Sheng Zhang",
+   "Eric Horvitz"
+  ],
+  "published": "2024-11-06"
+ },
+ "2310.03714": {
+  "title": "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines",
+  "authors": [
+   "Omar Khattab",
+   "Arnav Singhvi",
+   "Paridhi Maheshwari",
+   "Zhiyuan Zhang",
+   "Keshav Santhanam",
+   "Sri Vardhamanan",
+   "Saiful Haq",
+   "Ashutosh Sharma",
+   "Thomas T. Joshi",
+   "Hanna Moazam",
+   "Heather Miller",
+   "Matei Zaharia",
+   "Christopher Potts"
+  ],
+  "published": "2023-10-05"
+ },
+ "2405.20947": {
+  "title": "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+  "authors": [
+   "Justin Cui",
+   "Wei-Lin Chiang",
+   "Ion Stoica",
+   "Cho-Jui Hsieh"
+  ],
+  "published": "2024-05-31"
+ },
+ "2410.06992": {
+  "title": "SWE-Bench+: Enhanced Coding Benchmark for LLMs",
+  "authors": [
+   "Reem Aleithan",
+   "Haoran Xue",
+   "Mohammad Mahdi Mohajer",
+   "Elijah Nnorom",
+   "Gias Uddin",
+   "Song Wang"
+  ],
+  "published": "2024-10-09"
+ },
+ "2306.05685": {
+  "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+  "authors": [
+   "Lianmin Zheng",
+   "Wei-Lin Chiang",
+   "Ying Sheng",
+   "Siyuan Zhuang",
+   "Zhanghao Wu",
+   "Yonghao Zhuang",
+   "Zi Lin",
+   "Zhuohan Li",
+   "Dacheng Li",
+   "Eric P. Xing",
+   "Hao Zhang",
+   "Joseph E. Gonzalez",
+   "Ion Stoica"
+  ],
+  "published": "2023-06-09"
+ },
+ "2405.13565": {
+  "title": "AI-Assisted Assessment of Coding Practices in Modern Code Review",
+  "authors": [
+   "Manushree Vijayvergiya",
+   "Ma\u0142gorzata Salawa",
+   "Ivan Budiseli\u0107",
+   "Dan Zheng",
+   "Pascal Lamblin",
+   "Marko Ivankovi\u0107",
+   "Juanjo Carin",
+   "Mateusz Lewko",
+   "Jovan Andonov",
+   "Goran Petrovi\u0107",
+   "Daniel Tarlow",
+   "Petros Maniatis",
+   "Ren\u00e9 Just"
+  ],
+  "published": "2024-05-22"
+ },
+ "2403.07974": {
+  "title": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+  "authors": [
+   "Naman Jain",
+   "King Han",
+   "Alex Gu",
+   "Wen-Ding Li",
+   "Fanjia Yan",
+   "Tianjun Zhang",
+   "Sida Wang",
+   "Armando Solar-Lezama",
+   "Koushik Sen",
+   "Ion Stoica"
+  ],
+  "published": "2024-03-12"
+ },
+ "2307.09009": {
+  "title": "How is ChatGPT's behavior changing over time?",
+  "authors": [
+   "Lingjiao Chen",
+   "Matei Zaharia",
+   "James Zou"
+  ],
+  "published": "2023-07-18"
+ },
+ "2404.13161": {
+  "title": "CyberSecEval 2: A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models",
+  "authors": [
+   "Manish Bhatt",
+   "Sahana Chennabasappa",
+   "Yue Li",
+   "Cyrus Nikolaidis",
+   "Daniel Song",
+   "Shengye Wan",
+   "Faizan Ahmad",
+   "Cornelius Aschermann",
+   "Yaohui Chen",
+   "Dhaval Kapil",
+   "David Molnar",
+   "Spencer Whitman",
+   "Joshua Saxe"
+  ],
+  "published": "2024-04-19"
+ },
+ "2311.17371": {
+  "title": "Should we be going MAD? A Look at Multi-Agent Debate Strategies for LLMs",
+  "authors": [
+   "Andries Smit",
+   "Paul Duckworth",
+   "Nathan Grinsztajn",
+   "Thomas D. Barrett",
+   "Arnu Pretorius"
+  ],
+  "published": "2023-11-29"
+ },
+ "2404.13076": {
+  "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+  "authors": [
+   "Arjun Panickssery",
+   "Samuel R. Bowman",
+   "Shi Feng"
+  ],
+  "published": "2024-04-15"
+ },
+ "2602.07150": {
+  "title": "On Randomness in Agentic Evals",
+  "authors": [
+   "Bjarni Haukur Bjarnason",
+   "Andr\u00e9 Silva",
+   "Martin Monperrus"
+  ],
+  "published": "2026-02-06"
+ },
+ "2508.18771": {
+  "title": "Does AI Code Review Lead to Code Changes? A Case Study of GitHub Actions",
+  "authors": [
+   "Kexin Sun",
+   "Hongyu Kuang",
+   "Sebastian Baltes",
+   "Xin Zhou",
+   "He Zhang",
+   "Xiaoxing Ma",
+   "Guoping Rong",
+   "Dong Shao",
+   "Christoph Treude"
+  ],
+  "published": "2025-08-26"
+ },
+ "2504.04715": {
+  "title": "Are You Getting What You Pay For? Auditing Model Substitution in LLM APIs",
+  "authors": [
+   "Will Cai",
+   "Tianneng Shi",
+   "Xuandong Zhao",
+   "Dawn Song"
+  ],
+  "published": "2025-04-07"
+ },
+ "2512.08296": {
+  "title": "Towards a Science of Scaling Agent Systems",
+  "authors": [
+   "Yubin Kim",
+   "Ken Gu",
+   "Chanwoo Park",
+   "Chunjong Park",
+   "Samuel Schmidgall",
+   "A. Ali Heydari",
+   "Yao Yan",
+   "Zhihan Zhang",
+   "Yuchen Zhuang",
+   "Yun Liu",
+   "Mark Malhotra",
+   "Paul Pu Liang",
+   "Hae Won Park",
+   "Yuzhe Yang",
+   "Xuhai Xu",
+   "Yilun Du",
+   "Shwetak Patel",
+   "Tim Althoff",
+   "Daniel McDuff",
+   "Xin Liu"
+  ],
+  "published": "2025-12-09"
+ },
+ "2505.23419": {
+  "title": "SWE-bench Goes Live!",
+  "authors": [
+   "Linghao Zhang",
+   "Shilin He",
+   "Chaoyun Zhang",
+   "Yu Kang",
+   "Bowen Li",
+   "Chengxing Xie",
+   "Junhao Wang",
+   "Maoquan Wang",
+   "Yufan Huang",
+   "Shengyu Fu",
+   "Elsie Nallipogu",
+   "Qingwei Lin",
+   "Yingnong Dang",
+   "Saravan Rajmohan",
+   "Dongmei Zhang"
+  ],
+  "published": "2025-05-29"
+ },
+ "2503.04818": {
+  "title": "Prompting Science Report 1: Prompt Engineering is Complicated and Contingent",
+  "authors": [
+   "Lennart Meincke",
+   "Ethan Mollick",
+   "Lilach Mollick",
+   "Dan Shapiro"
+  ],
+  "published": "2025-03-04"
+ },
+ "2511.07017": {
+  "title": "Benchmarking LLMs for Fine-Grained Code Review with Enriched Context in Practice",
+  "authors": [
+   "Ruida Hu",
+   "Xinchen Wang",
+   "Xin-Cheng Wen",
+   "Zhao Zhang",
+   "Bo Jiang",
+   "Pengfei Gao",
+   "Chao Peng",
+   "Cuiyun Gao"
+  ],
+  "published": "2025-11-10"
+ },
+ "2505.20411": {
+  "title": "SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents",
+  "authors": [
+   "Ibragim Badertdinov",
+   "Alexander Golubev",
+   "Maksim Nekrashevich",
+   "Anton Shevtsov",
+   "Simon Karasik",
+   "Andrei Andriushchenko",
+   "Maria Trofimova",
+   "Daria Litvintseva",
+   "Boris Yangel"
+  ],
+  "published": "2025-05-26"
+ },
+ "2503.13657": {
+  "title": "Why Do Multi-Agent LLM Systems Fail?",
+  "authors": [
+   "Mert Cemri",
+   "Melissa Z. Pan",
+   "Shuyi Yang",
+   "Lakshya A. Agrawal",
+   "Bhavya Chopra",
+   "Rishabh Tiwari",
+   "Kurt Keutzer",
+   "Aditya Parameswaran",
+   "Dan Klein",
+   "Kannan Ramchandran",
+   "Matei Zaharia",
+   "Joseph E. Gonzalez",
+   "Ion Stoica"
+  ],
+  "published": "2025-03-17"
+ },
+ "2601.19494": {
+  "title": "AACR-Bench: Evaluating Automatic Code Review with Holistic Repository-Level Context",
+  "authors": [
+   "Lei Zhang",
+   "Yongda Yu",
+   "Minghui Yu",
+   "Xinxin Guo",
+   "Zhengqi Zhuang",
+   "Guoping Rong",
+   "Dong Shao",
+   "Haifeng Shen",
+   "Hongyu Kuang",
+   "Zhengfeng Li",
+   "Boge Wang",
+   "Guoan Zhang",
+   "Bangyu Xiang",
+   "Xiaobin Xu"
+  ],
+  "published": "2026-01-27"
+ },
+ "2503.15223": {
+  "title": "Are \"Solved Issues\" in SWE-bench Really Solved Correctly? An Empirical Study",
+  "authors": [
+   "You Wang",
+   "Michael Pradel",
+   "Zhongxin Liu"
+  ],
+  "published": "2025-03-19"
+ },
+ "2512.01420": {
+  "title": "PromptBridge: Cross-Model Prompt Transfer for Large Language Models",
+  "authors": [
+   "Yaxuan Wang",
+   "Quan Liu",
+   "Zhenting Wang",
+   "Zichao Li",
+   "Wei Wei",
+   "Yang Liu",
+   "Yujia Bao"
+  ],
+  "published": "2025-12-01"
+ },
+ "2506.12286": {
+  "title": "The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason",
+  "authors": [
+   "Shanchao Liang",
+   "Spandan Garg",
+   "Roshanak Zilouchian Moghaddam"
+  ],
+  "published": "2025-06-14"
+ },
+ "2510.22251": {
+  "title": "You Don't Need Prompt Engineering Anymore: The Prompting Inversion",
+  "authors": [
+   "Imran Khan"
+  ],
+  "published": "2025-10-25"
+ },
+ "2509.14856": {
+  "title": "CodeFuse-CR-Bench: A Comprehensiveness-aware Benchmark for End-to-End Code Review Evaluation in Python Projects",
+  "authors": [
+   "Hanyang Guo",
+   "Xunjin Zheng",
+   "Zihan Liao",
+   "Hang Yu",
+   "Peng DI",
+   "Ziyin Zhang",
+   "Hong-Ning Dai"
+  ],
+  "published": "2025-09-18"
+ },
+ "2506.07142": {
+  "title": "Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting",
+  "authors": [
+   "Lennart Meincke",
+   "Ethan Mollick",
+   "Lilach Mollick",
+   "Dan Shapiro"
+  ],
+  "published": "2025-06-08"
+ },
+ "2602.11988": {
+  "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+  "authors": [
+   "Thibaud Gloaguen",
+   "Niels M\u00fcndler-Sasahara",
+   "Mark Niklas M\u00fcller",
+   "Veselin Raychev",
+   "Martin Vechev"
+  ],
+  "published": "2026-02-12"
+ },
+ "2507.05573": {
+  "title": "Prompt Migration: Stabilizing GenAI Applications with Evolving Large Language Models",
+  "authors": [
+   "Shivani Tripathi",
+   "Pushpanjali Nema",
+   "Aditya Halder",
+   "Shi Qiao",
+   "Alekh Jindal"
+  ],
+  "published": "2025-07-08"
+ },
+ "2511.00517": {
+  "title": "Issue-Oriented Agent-Based Framework for Automated Review Comment Generation",
+  "authors": [
+   "Shuochuan Li",
+   "Dong Wang",
+   "Patanamon Thongtanunam",
+   "Zan Wang",
+   "Jiuqiao Yu",
+   "Junjie Chen"
+  ],
+  "published": "2025-11-01"
+ },
+ "2505.16339": {
+  "title": "Rethinking Code Review Workflows with LLM Assistance: An Empirical Study",
+  "authors": [
+   "Fannar Steinn A\u00f0alsteinsson",
+   "Bj\u00f6rn Borgar Magn\u00fasson",
+   "Mislav Milicevic",
+   "Adam Nirving Davidsson",
+   "Chih-Hong Cheng"
+  ],
+  "published": "2025-05-22"
+ },
+ "2503.16167": {
+  "title": "CodeReviewQA: The Code Review Comprehension Assessment for Large Language Models",
+  "authors": [
+   "Hong Yi Lin",
+   "Chunhua Liu",
+   "Haoyu Gao",
+   "Patanamon Thongtanunam",
+   "Christoph Treude"
+  ],
+  "published": "2025-03-20"
+ },
+ "2509.01494": {
+  "title": "SWR-Bench: Assessing LLM Performance in Real-World Code Review Comment Generation",
+  "authors": [
+   "Zhengran Zeng",
+   "Ruikai Shi",
+   "Keke Han",
+   "Yixin Li",
+   "Kaicheng Sun",
+   "Yidong Wang",
+   "Zhuohao Yu",
+   "Rui Xie",
+   "Wei Ye",
+   "Shikun Zhang"
+  ],
+  "published": "2025-09-01"
+ },
+ "2602.12670": {
+  "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+  "authors": [
+   "Xiangyi Li",
+   "Yimin Liu",
+   "Wenbo Chen",
+   "Bingran You",
+   "Zonglin Di",
+   "Yifeng He",
+   "Shenghan Zheng",
+   "Kyoung Whan Choe",
+   "Jiankai Sun",
+   "Shuyi Wang",
+   "Chujun Tao",
+   "Binxu Li",
+   "Xuandong Zhao",
+   "Hejia Geng",
+   "Xiaojun Wu",
+   "Junwei Zhou",
+   "Xiaokun Chen",
+   "Hanwen Xing",
+   "Yubo Li",
+   "Qunhong Zeng",
+   "Di Wang",
+   "Yuanli Wang",
+   "Roey Ben Chaim",
+   "Penghao Jiang",
+   "Haotian Shen",
+   "Luyang Kong",
+   "Xinyi Liu",
+   "Runhui Wang",
+   "Xuanqing Liu",
+   "Jiachen Li",
+   "Xin Lan",
+   "Yueqian Lin",
+   "Wengao Ye",
+   "Junwei He",
+   "Songlin Li",
+   "Yue Zhang",
+   "Yipeng Gao",
+   "Yijiang Li",
+   "Ze Ma",
+   "Liqiang Jing",
+   "Tianyu Wang",
+   "Kaixin Li",
+   "Yiqi Xue",
+   "Haoran Lyu",
+   "Yizhuo He",
+   "Yuchen Tian",
+   "Shutong Wu",
+   "Bowei Wang",
+   "Yixuan Gao",
+   "Bo Chen",
+   "Litong Liu",
+   "Sikai Cheng",
+   "Jiajun Bao",
+   "Shuaicheng Tong",
+   "Shuwen Xu",
+   "Terry Yue Zhuo",
+   "Tinghan Ye",
+   "Qi Qi",
+   "Miao Li",
+   "Longtai Liao",
+   "Zelin Tan",
+   "Chang Shi",
+   "Xilin Tang",
+   "Srinath Tankasala",
+   "Boqin Yuan",
+   "Yaoyao Qian",
+   "Jianhong Tu",
+   "Chenguang Wang",
+   "Yizhou Sun",
+   "Wei Wang",
+   "Aaron Taylor",
+   "Ziyue Yang",
+   "Changkun Guan",
+   "Zhikang Dong",
+   "Xinyu Zhang",
+   "Steven Dillmann",
+   "Han-chung Lee",
+   "Dawn Song"
+  ],
+  "published": "2026-02-13"
+ },
+ "2508.06709": {
+  "title": "Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge",
+  "authors": [
+   "Evangelia Spiliopoulou",
+   "Riccardo Fogliato",
+   "Hanna Burnsky",
+   "Tamer Soliman",
+   "Jie Ma",
+   "Graham Horwood",
+   "Miguel Ballesteros"
+  ],
+  "published": "2025-08-08"
+ },
+ "2501.15134": {
+  "title": "BitsAI-CR: Automated Code Review via LLM in Practice",
+  "authors": [
+   "Tao Sun",
+   "Jian Xu",
+   "Yuanpeng Li",
+   "Zhao Yan",
+   "Ge Zhang",
+   "Lintao Xie",
+   "Lu Geng",
+   "Zheng Wang",
+   "Yueyan Chen",
+   "Qin Lin",
+   "Wenbo Duan",
+   "Kaixin Sui"
+  ],
+  "published": "2025-01-25"
+ },
+ "2608.09290": {
+  "title": "OpenCodeReview: Determinism over Non-Determinism for Cost-Effective Agent-Based Code Review",
+  "authors": [
+   "Zhengfeng Li",
+   "Lei Zhang",
+   "Xianwei Wu",
+   "Zhengqi Zhuang",
+   "Yingjie Xu",
+   "Boge Wang",
+   "Shaofei Zhu",
+   "Chuan Wang",
+   "Peng Zhao",
+   "Xinyu Zheng",
+   "Guoping Rong"
+  ],
+  "published": "2026-08-10"
+ },
+ "2603.26130": {
+  "title": "SWE-PRBench: Benchmarking AI Code Review Quality Against Pull Request Feedback",
+  "authors": [
+   "Deepak Kumar"
+  ],
+  "published": "2026-03-27"
+ },
+ "2603.11078": {
+  "title": "CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents",
+  "authors": [
+   "Kristen Pereira",
+   "Neelabh Sinha",
+   "Rajat Ghosh",
+   "Debojyoti Dutta"
+  ],
+  "published": "2026-03-10"
+ },
+ "2603.23448": {
+  "title": "Code Review Agent Benchmark",
+  "authors": [
+   "Yuntong Zhang",
+   "Zhiyuan Pan",
+   "Imam Nur Bani Yusuf",
+   "Haifeng Ruan",
+   "Ridwan Shariffdeen",
+   "Abhik Roychoudhury"
+  ],
+  "published": "2026-03-24"
+ },
+ "2605.23657": {
+  "title": "OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents",
+  "authors": [
+   "Jiahao Ying",
+   "Boxian Ai",
+   "Wei Tang",
+   "Siyuan Liu",
+   "Yixin Cao"
+  ],
+  "published": "2026-05-22"
+ },
+ "2604.06996": {
+  "title": "Self-Preference Bias in Rubric-Based Evaluation of Large Language Models",
+  "authors": [
+   "Jos\u00e9 Pombal",
+   "Ricardo Rei",
+   "Andr\u00e9 F. T. Martins"
+  ],
+  "published": "2026-04-08"
+ },
+ "2609.00468": {
+  "title": "What Survives the Next Model? Benchmarking LLM-Based Techniques Against Single-Prompts",
+  "authors": [
+   "Nahian Salsabil",
+   "Joy Saha",
+   "Simantika Bhattacharjee Dristi",
+   "Nicholas Phair",
+   "Nusrat Jahan Mozumder",
+   "Matthew B. Dwyer",
+   "Sebastian Elbaum"
+  ],
+  "published": "2026-08-31"
+ },
+ "2607.13196": {
+  "title": "From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality",
+  "authors": [
+   "Suzhen Zhong",
+   "Shayan Noei",
+   "Bram Adams",
+   "Ying Zou"
+  ],
+  "published": "2026-07-14"
+ },
+ "2608.27442": {
+  "title": "From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench",
+  "authors": [
+   "Dewu Zheng",
+   "Yanlin Wang",
+   "Xiwen Wang",
+   "Kefeng Duan",
+   "Hongyu Zhang",
+   "Xilin Liu",
+   "Yuchi Ma",
+   "Zibin Zheng"
+  ],
+  "published": "2026-08-27"
+ },
+ "2608.24641": {
+  "title": "Aging of Prompt Engineering Techniques Across LLM Versions",
+  "authors": [
+   "Anastasiia Rudyk",
+   "Julian Oertel",
+   "Regina Hebig"
+  ],
+  "published": "2026-08-25"
+ },
+ "2604.02460": {
+  "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+  "authors": [
+   "Dat Tran",
+   "Douwe Kiela"
+  ],
+  "published": "2026-04-02"
+ },
+ "2605.26731": {
+  "title": "It's Not the Capability: Harness Sensitivity Is Non-Monotone Across LLM Agent Tiers",
+  "authors": [
+   "Yong-eun Cho"
+  ],
+  "published": "2026-05-26"
+ },
+ "2603.15401": {
+  "title": "SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?",
+  "authors": [
+   "Tingxu Han",
+   "Yi Zhang",
+   "Wei Song",
+   "Chunrong Fang",
+   "Zhenyu Chen",
+   "Youcheng Sun",
+   "Lijie Hu"
+  ],
+  "published": "2026-03-16"
+ }
+}

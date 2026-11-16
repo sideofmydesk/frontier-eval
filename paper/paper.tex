@@ -1,0 +1,526 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+\captionsetup{font=small,labelfont=bf}
+\setlist{itemsep=2pt,topsep=4pt}
+\graphicspath{{figures/}}
+\newcommand{\fig}[1]{\includegraphics[width=\linewidth]{#1}}
+\newcommand{\pp}{ points}
+% \input is not expandable at the start of a table row; this primitive form is.
+\makeatletter\newcommand{\tabinput}[1]{\@@input #1 }\makeatother
+
+\hypersetup{
+  pdftitle={Does the Official Code-Review Plugin Still Help? A First Look, Comparing It with a Simple Request on Two New AI Models},
+  pdfauthor={Ian J Michel},
+  pdfsubject={Research Edition 1, Side of My Desk},
+  pdfkeywords={code review; large language models; Claude Code; agent plugins; LLM-as-judge; empirical software engineering}
+}
+
+\begin{document}
+
+\begin{center}
+{\fontsize{24}{29}\selectfont\bfseries Does the Official Code-Review Plugin\\[2pt] Still Help?\par}
+\vspace{8pt}
+{\Large A First Look, Comparing It with a Simple Request\\ on Two New AI Models\par}
+\vspace{16pt}
+{\fontsize{16}{20}\selectfont Ian J Michel\par}
+\vspace{6pt}
+{\normalsize Side of My Desk LLC\\ \texttt{research@sideofmydesk.com}\par}
+\vspace{8pt}
+{\small Research Edition 1 \quad\textbullet\quad Version 1.0 \quad\textbullet\quad 18 November 2026\par}
+\end{center}
+\vspace{6pt}
+
+\begin{abstract}
+\noindent AI coding tools can be given add-ons called plugins. A plugin is a set of written steps that tells the AI how to do a job. The steps are written for the AI models of the day. Then a newer model comes out, and few people check whether the steps still help.
+
+This paper checks one well-known plugin: the official code-review plugin for Claude Code, made by Anthropic. We gave the AI 15 real code changes to check for mistakes. Each change was checked two ways: with the plugin, and with a simple one-paragraph request. We did this on two models, Claude Opus~5.5 and Claude Fable~5.2, twice each. That made 120 reviews. We kept a record of which model answered every request.
+
+Without the plugin, each model found about twice as many of the known mistakes. It found 66\% against 31\% on Opus~5.5, and 73\% against 32\% on Fable~5.2. The plugin said much less. A bigger share of what it said matched a known mistake, and it cost about one and a half times as much. On none of the 15 code changes did the plugin find more of the known mistakes than the simple request.
+
+The plugin's one advantage was smaller on the newer model. The plugin also picks its own models for its helpers. So on the newer model, the checking was still done by the older one. And the older model skipped the plugin's team process in 13 of 30 reviews. Those reviews cost a third as much and did about as well.
+
+We also looked at the 543 things the AI reported that were not on the list of known mistakes. A second AI judged 285 of them to be real. They come to 123 separate mistakes the list does not have. When a more careful AI review looked again at 30 of those judgements, it agreed with 24.
+
+This is a small study. The test set is public, an AI did the grading, and we did not set pass marks ahead of time. The results are a first look. They call for a bigger study. They are not a final verdict on the plugin.
+\end{abstract}
+
+\section{Introduction}
+
+A plugin for an AI coding tool is mostly words. The plugin we studied has four files: a small settings file, a licence, a help page, and one page of instructions \citep{anthropic2026plugin}. The instructions tell the AI which helpers to start, which model each helper should use, what to look for, and what to leave out. They are someone's best guess about what a model needs to be told to check code well.
+
+That guess is made on the day the plugin is written. Models keep changing. A step that fixed a weak spot in one model may not be needed in the next. It may even get in the way. Teams add a plugin, see it work, and keep it for years. They rarely test it again.
+
+This paper tests one idea:
+
+\begin{quote}
+\textbf{Plugins age badly.} Steps written for an older model help less on a newer model, and may hold it back.
+\end{quote}
+
+We had a natural way to test it. The plugin's current steps were added to Anthropic's official plugin collection on 26 October 2026. Claude Opus~5.5 came out before that, on 22 September 2026. Claude Fable~5.2 came out after it, on 9 November 2026. So Fable~5.2 is newer than the plugin. If plugins age badly, the plugin should help less on Fable~5.2 than on Opus~5.5.
+
+\paragraph{What we found, in short.} The biggest result was not about age. On both models, the simple request found about twice as many known mistakes as the plugin, and cost less. What the plugin did well was to say little and be right more often. The test of our idea came out half and half. One measure leaned our way clearly. The other did not. And we cannot say why, for a reason that is a finding in itself: the plugin sends its work to models it picks.
+
+\paragraph{What is new here.}
+\begin{itemize}
+\item A fair test of an official plugin against a simple request, on the same models, using real code changes with mistakes that people had already found. We did not find an earlier study built this way (Section~\ref{sec:related}).
+\item A record, for every request, of which model did the work. This includes a test showing that the tool's own summary can name the wrong model.
+\item A check of every reported item that was not on the known list. It suggests the list holds fewer than half of the real mistakes.
+\item A method that is cheap to run again each time a new model comes out. The whole study cost about \$136.
+\end{itemize}
+
+This is a first look. Section~\ref{sec:threats} lists what it cannot show.
+
+\section{The plugin we tested}
+\label{sec:plugin}
+
+The plugin is the folder \texttt{plugins/code-review} in \texttt{anthropics/claude-plugins-official}, at version \texttt{9780cf4} \citep{anthropic2026plugin}. We read all of it before running anything. It has no program code. It has one command, \texttt{/code-review:code-review}. The command tells the AI to do these steps:
+
+\begin{enumerate}
+\item Start a ``haiku'' helper to check that the code change is open, is not a draft, is not trivial, and has not been reviewed already.
+\item Start a ``haiku'' helper to list any \texttt{CLAUDE.md} rule files.
+\item Start a ``sonnet'' helper to sum up the change.
+\item Start four checkers at once: two ``sonnet'' helpers to check the rule files, and two ``Opus'' helpers to look for bugs.
+\item For each possible problem, start one more helper to double-check it. Use ``Opus'' for bugs and ``sonnet'' for broken rules.
+\item Drop any problem that did not pass the double-check. Report the rest.
+\end{enumerate}
+
+Haiku, Sonnet, and Opus are three sizes of Claude model, from smallest to largest. Three things about these steps matter later.
+
+\paragraph{The plugin picks the models.} The model you choose only runs the show. The checking and double-checking go to the models the plugin names. In our records these were \texttt{claude-haiku-5-5}, \texttt{claude-sonnet-5-5}, and \texttt{claude-opus-5-5}.
+
+\paragraph{The plugin sets a high bar.} The checkers are told to report only three things: code that will not run, code that ``will definitely produce wrong results regardless of inputs'', and broken rules they can quote. They are told not to report ``potential issues that depend on specific inputs or state''. General security problems are on the plugin's list of things to skip. So when the plugin leaves a problem out, it may be doing what it was told.
+
+\paragraph{The help page is out of date.} The help page describes a score from 0 to 100, with problems under 80 dropped. The instructions no longer use a score. The new steps arrived in one update with no version number. The next update added the number \texttt{1.0.1} and changed nothing else.
+
+\paragraph{What we did not test.} Anthropic has three other things with similar names: a paid Code Review service, a \texttt{/code-review} skill built into Claude Code, and a larger review that runs in the cloud. This paper is not about any of them. Our records show that all 60 plugin reviews used the plugin's command, and none of the 60 reviews without the plugin used any built-in skill.
+
+\section{How we did it}
+
+\subsection{The plan}
+
+We reviewed each of 15 code changes in four ways, twice each:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+What we changed & Choices \\
+\midrule
+Model & Claude Opus 5.5 (\texttt{claude-opus-5-5}); Claude Fable 5.2 (\texttt{claude-fable-5-2}) \\
+Setup & With the plugin; without it \\
+Code change & 15 real ones \\
+Repeat & 2 \\
+\midrule
+Total & 120 reviews \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A code change sent in for review is called a \emph{pull request}. We ran the first round of all 60 reviews before starting the second round. The order inside each round was shuffled.
+
+\paragraph{With the plugin.} We loaded the plugin from a saved copy of version \texttt{9780cf4}. We checked that copy, file by file, against the one we had read. Then we typed \texttt{/code-review:code-review 1}. We used the plugin as it ships. Its helpers ran on the models it names.
+
+\paragraph{Without the plugin.} We used the same model with no plugin loaded and typed this:
+
+\begin{quote}\small
+Review pull request \#1 in this repository. Use the gh CLI to read it. Report every bug or defect you find in the changed code, giving the file path and line for each. Do not post anything to GitHub.
+\end{quote}
+
+The words of this request matter. ``Report every bug'' asks for a long list. The plugin is told to report only what it can double-check. That difference is part of what we are measuring (Section~\ref{sec:threats}).
+
+\paragraph{What we kept the same.} Every review used Claude Code version 2.1.325. We set the effort level to \texttt{high} ourselves, because the two models come with different default levels \citep{anthropic2026effort}. Both setups were allowed the same read-only commands. Each review started fresh, with no memory of the others. None could use the web.
+
+\subsection{The test set}
+
+The code changes come from the Martian Code Review Bench \citep{martian2026bench}. It has 50 real pull requests from five open-source projects: Sentry, Grafana, Cal.com, Discourse, and Keycloak. People went through them and wrote down 173 real problems. Each problem has a short description, a level of seriousness, and a type. We call these the \emph{known issues}. Several companies test their review tools on these same pull requests. The test set's own notes say that AI tools may have seen them during training.
+
+Five entries had a note saying something was wrong with the data. We left those out. We shuffled the other 45 inside each project before running anything, and took the first three from each. The 15 we used have 53 known issues, from 2 to 8 each.
+
+The original pull requests are closed, and the plugin skips closed ones. So we made a fresh, open copy of each in a private place. Each copy has two saved states: the code before the change, and the code after. We checked that each copy shows the same number of changed files and changed lines as the original. Our copies do not carry the project's history, which differs from how the test set is normally used. The plugin version we tested does not read history.
+
+\subsection{Knowing which model answered}
+
+One plugin review makes many requests, to several models. Also, Claude models can refuse a request. When that happens, Claude Code normally sends the request to a different model and keeps going with that one \citep{anthropic2026refusals,anthropic2026modelconfig}. So to say ``this model did this work'', we need a record for every request.
+
+We set Claude Code to save every request and every reply to disk, and to send us a log line for each one. We matched these up. For each request we then knew which model was asked, which model answered, how much text went in and out, and which helper sent it. We turned off the switch to a different model. If a request was refused, the review stopped, and we counted it as \emph{refused}.
+
+We tested this record-keeping first, with a stand-in for the real service that sent back answers we had scripted. When the stand-in answered as a different model, our saved files showed it correctly. Claude Code's own summary at the end still named the model we had asked for. Anyone relying on that summary would not see the switch.
+
+Each review ended in one state: finished, refused, switched to another model, or broken. We scored only the finished ones.
+
+\subsection{Grading}
+
+We graded the way the test set's makers do, using their own instructions. A judge model first splits a review into separate findings. Then, for every finding and every known issue, it is asked whether the two describe the same problem. A known issue is \emph{found} if any finding matches it. A finding that matches no known issue is \emph{unmatched}.
+
+We use two scores.
+\begin{itemize}
+\item \textbf{Share found.} Of the known issues, what share did the review find? Researchers call this \emph{recall}.
+\item \textbf{Share that matched.} Of everything the review reported, what share matched a known issue? Researchers call this \emph{precision}. We work it out the same way the test set does.
+\end{itemize}
+
+The judge was Claude Sonnet~5.5. It saw only the review and the known issue. It was not told which model or setup wrote the review. We report scores for all the known issues, and for a ``Strict'' group that keeps only the bug, security, timing, data, and interface types.
+
+\subsection{Checking the unmatched findings}
+
+The test set's notes say its list may be missing things. If so, a finding can be correct and still count as unmatched. To see how often, we took all 543 unmatched findings from the finished reviews. We gave each one to a second AI, the checker, along with the code change. The checker was Claude Sonnet~5.5. It answered \emph{real}, \emph{not real}, or \emph{cannot tell from the change alone}. We told it to say \emph{real} only when the change itself showed the problem. It was not told which model or setup made the finding. We then grouped the real ones, so that the same mistake reported many times counted once.
+
+These answers are one AI's opinion, from the code change alone. To test them, we drew 30 at random: 20 that the checker had called real and 10 it had called not real. A second review judged each one again. It was done by Claude Fable~5.2, which could read the whole project's code and was not shown the checker's answer. No person has checked either set of answers.
+
+\subsection{The numbers}
+
+For each setup we add up the results across its reviews. Two reviews of the same pull request are related, so we cannot treat all 120 as separate. To show how sure we are, we give a range next to each score. We made the ranges by re-drawing the 15 pull requests at random 10,000 times and seeing how much the score moved. This follows published advice on grouping related test items \citep{miller2024errorbars}. Each range is the middle 95\% of those results. We did not decide ahead of time how big a difference would count as real. So we report ranges and do not claim to have proved anything.
+
+\section{What we found}
+
+\subsection{Did the reviews finish?}
+
+Of 120 reviews, 119 finished and one was refused. None was switched to another model. None broke. None posted anything to the pull requests. None showed any sign of having looked up the test set's answers. The judge made no errors.
+
+The refused review was a plugin review on Fable~5.2. One of its Opus~5.5 helpers was looking at a real security hole in the code being reviewed. A safety filter stopped it and labelled the request \texttt{cyber}. Since we had turned switching off, no other model stepped in. This was a false alarm on harmless security work. Anthropic's own guide says this can happen \citep{anthropic2026refusals}, and other studies measure how often \citep{bhatt2024cyberseceval,cui2024orbench}.
+
+\subsection{How many known issues were found}
+
+\begin{table}[h]
+\centering\small
+\caption{Main results, using all the known issues. The range in brackets is where we are 95\% sure the true value lies. ``Findings'' and ``Unmatched'' are averages per review. Cost is Claude Code's own estimate, in US dollars per review.}
+\label{tab:main}
+\begin{tabular}{llrrlrlrrr}
+\toprule
+Model & Setup & Reviews & \multicolumn{2}{c}{Share found (\%)} & \multicolumn{2}{c}{Share matched (\%)} & Findings & Unmatched & Cost \\
+\midrule
+\tabinput{generated/tab_main.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+Without the plugin, each model found about twice as many of the known issues (Table~\ref{tab:main}, Figure~\ref{fig:recall}). The plugin reported a fifth to a quarter as many findings. A bigger share of them matched a known issue (Figure~\ref{fig:precision}, Figure~\ref{fig:volume}).
+
+\begin{figure}[h]
+\fig{fig-01-recall.png}
+\caption{Share found: how much of the list of known issues each review reported. The thin lines show the 95\% range.}
+\label{fig:recall}
+\end{figure}
+
+\begin{figure}[h]
+\fig{fig-02-precision.png}
+\caption{Share that matched: how much of what a review reported was on the list of known issues. The true figure is higher (Section~\ref{sec:newissues}).}
+\label{fig:precision}
+\end{figure}
+
+\begin{figure}[h]
+\fig{fig-05-volume.png}
+\caption{Average findings per review. The dark part matched a known issue. The light part did not.}
+\label{fig:volume}
+\end{figure}
+
+\subsection{What the plugin changed, and our idea}
+
+\begin{table}[h]
+\centering\small
+\caption{Differences, in percentage points, with 95\% ranges. A minus sign means the plugin did worse. The third row of each block is the test of our idea: the plugin's effect on Fable~5.2 minus its effect on Opus~5.5.}
+\label{tab:diff}
+\begin{tabular}{llrlrl}
+\toprule
+Group & Comparison & \multicolumn{2}{c}{Share found} & \multicolumn{2}{c}{Share matched} \\
+\midrule
+\tabinput{generated/tab_diff.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+On both models, the plugin found far fewer known issues, and a bigger share of its findings matched. All four of those ranges stay on one side of zero, so we are confident of all four (Table~\ref{tab:diff}, Figure~\ref{fig:effect}).
+
+Our idea says the plugin should help less on the newer model. The result is half and half (Figure~\ref{fig:hypothesis}):
+
+\begin{itemize}
+\item \textbf{Share that matched.} The plugin's lead was 31.9\pp{} on Opus~5.5 and 16.6\pp{} on Fable~5.2. The lead shrank by 15.4\pp. The range for that drop does not include zero, so we are fairly sure it is real.
+\item \textbf{Share found.} The plugin was behind by 34.9\pp{} on Opus~5.5 and by 41.0\pp{} on Fable~5.2. It fell behind by 6.1\pp{} more. The range for that includes zero, so it could be chance.
+\end{itemize}
+
+Both numbers lean the way our idea says. The Strict group shows the same thing. But only one of the two is clear with a study this small. And it is the one most affected by the gaps in the list of known issues.
+
+\begin{figure}[h]
+\fig{fig-03-plugin-effect.png}
+\caption{What adding the plugin changed on each model. Left of the line, the plugin did worse. Right of it, better.}
+\label{fig:effect}
+\end{figure}
+
+\begin{figure}[h]
+\fig{fig-04-hypothesis.png}
+\caption{The test of our idea. Each dot is the plugin's effect on Fable~5.2 minus its effect on Opus~5.5. A dot left of the line supports ``plugins age badly''.}
+\label{fig:hypothesis}
+\end{figure}
+
+\subsection{One pull request at a time}
+
+The gap is wide and steady. On none of the 15 pull requests, on either model, did the plugin find a bigger share of known issues than the simple request. They tied on two pull requests on each model (Figure~\ref{fig:percase}). The gap shows up at every level of seriousness (Table~\ref{tab:severity}, Figure~\ref{fig:severity}).
+
+\begin{figure}[h]
+\fig{fig-08-per-case.png}
+\caption{Share of known issues found on each pull request, with both rounds added together.}
+\label{fig:percase}
+\end{figure}
+
+\begin{table}[h]
+\centering\small
+\caption{Known issues found, out of those there were to find, by how serious the test set says each is. Counts cover all finished reviews.}
+\label{tab:severity}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Opus 5.5} & \multicolumn{2}{c}{Fable 5.2} \\
+Seriousness & Plugin & No plugin & Plugin & No plugin \\
+\midrule
+\tabinput{generated/tab_severity.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-11-severity.png}
+\caption{Share found, by seriousness, with both models added together.}
+\label{fig:severity}
+\end{figure}
+
+The plugin was also less steady from one round to the next. Take the known issues a setup found at least once in its two rounds. The plugin found 63\% to 65\% of them both times. The simple request found 83\% to 84\% both times (Table~\ref{tab:consistency}, Figure~\ref{fig:consistency}). Other work has also found that AI agents give different results on repeat runs \citep{bjarnason2026randomness}.
+
+\begin{table}[h]
+\centering\small
+\caption{How well the two rounds agreed, counting each known issue once.}
+\label{tab:consistency}
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Setup & Known issues & Both rounds & One round & Neither & Both, of those found \\
+\midrule
+\tabinput{generated/tab_consistency.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-09-consistency.png}
+\caption{Of the known issues a setup found at least once, the share it found in both rounds.}
+\label{fig:consistency}
+\end{figure}
+
+\subsection{What it cost, and which models did the work}
+
+The plugin cost about one and a half times as much per review on both models (Table~\ref{tab:cost}, Figure~\ref{fig:cost}).
+
+When we chose Fable~5.2, 43\% of the plugin's bill was for Opus~5.5 helpers. The bug hunting and the double-checking are jobs the plugin gives to ``Opus''. They ran on \texttt{claude-opus-5-5}, not on the model we chose. Picking the newer model changed who ran the show. It did not change who did the checking.
+
+Most of the cost comes from start-up. Every review and every helper begins by loading Claude Code's own long set of instructions. So the number of helpers matters more to the bill than the size of the code change.
+
+\begin{table}[h]
+\centering\small
+\caption{Average requests and estimated cost per review, in US dollars, split by the model that answered. Finished reviews only.}
+\label{tab:cost}
+\begin{tabular}{llrrrrrr}
+\toprule
+Model chosen & Setup & Requests & Fable 5.2 & Opus 5.5 & Sonnet 5.5 & Haiku 5.5 & Total \\
+\midrule
+\tabinput{generated/tab_cost.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-06-cost.png}
+\caption{Estimated cost per review, split by the model that did the work.}
+\label{fig:cost}
+\end{figure}
+
+\subsection{Did the AI follow the plugin?}
+
+The plugin tells the AI to hand work to helpers. But that is only an instruction. The model decides whether to follow it. Fable~5.2 started helpers in all 30 of its plugin reviews. Opus~5.5 started none in 13 of its 30, and did the review by itself (Figure~\ref{fig:delegation}).
+
+When Opus~5.5 skipped the helpers, a review cost \$0.28, against \$0.85 with them. It found about the same share of known issues, and a bigger share of its findings matched (Table~\ref{tab:delegation}). We did not choose which reviews skipped the helpers. The model did. So this is a hint, not a fair test. It does fit other studies, which find that a team of AI helpers often does no better than one AI once the extra cost is counted \citep{kim2025scaling,tran2026single,kapoor2024agents}.
+
+\begin{table}[h]
+\centering\small
+\caption{Plugin reviews, split by whether the AI started any helper. Scores are percentages over all known issues.}
+\label{tab:delegation}
+\begin{tabular}{llrrrr}
+\toprule
+Model chosen & What it did & Reviews & Share found & Share matched & Cost per review \\
+\midrule
+\tabinput{generated/tab_delegation.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-07-delegation.png}
+\caption{Share of plugin reviews in which the AI started the helpers the plugin asks for.}
+\label{fig:delegation}
+\end{figure}
+
+\subsection{Mistakes that were not on the list}
+\label{sec:newissues}
+
+There were 543 unmatched findings. The checker judged 285 of them real (52\%) and 136 not real (25\%). For 122 (22\%) it could not tell from the code change alone (Table~\ref{tab:checker}, Figure~\ref{fig:unmatched}).
+
+\begin{table}[h]
+\centering\small
+\caption{The checker's answers on findings that matched no known issue.}
+\label{tab:checker}
+\begin{tabular}{llrrrr}
+\toprule
+Model & Setup & Unmatched & Real & Cannot tell & Not real \\
+\midrule
+\tabinput{generated/tab_checker.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-10-unmatched.png}
+\caption{The checker's answers on all 543 unmatched findings, by setup.}
+\label{fig:unmatched}
+\end{figure}
+
+How far can the checker be trusted? The second review, with the full code to read, agreed with it on 24 of the 30 answers it looked at. Of the 20 the checker had called real, the second review agreed on 16. Of the 10 the checker had called not real, it agreed on 8 and judged 2 to be real. So about four in five of the checker's answers held up. The numbers in this section are likely somewhat too high. The second review was also done by an AI, and by one of the two models we were testing.
+
+Many of the 285 were the same mistake reported in more than one review. Counting each mistake once gives \textbf{123 separate mistakes} that the test set does not list for these 15 pull requests. The test set lists 53 (Table~\ref{tab:newissues}, Figure~\ref{fig:newissues}). Of the 123, 27 were rated serious or very serious, and 25 turned up in four or more separate reviews. Reviews without the plugin found 118 of them. Reviews with the plugin found 24.
+
+\begin{table}[h]
+\centering\small
+\caption{Separate mistakes that are not on the test set's list and that the checker judged real, by type and by which setup reported them. A mistake reported under both setups is counted in both columns.}
+\label{tab:newissues}
+\begin{tabular}{lrrr}
+\toprule
+Type & Separate mistakes & With plugin & Without plugin \\
+\midrule
+\tabinput{generated/tab_newissues.tex}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\fig{fig-12-new-issues.png}
+\caption{Mistakes on the test set's list, and separate mistakes not on it that were judged real, split by which setup found them.}
+\label{fig:newissues}
+\end{figure}
+
+Two things follow.
+
+First, the ``share that matched'' scores in Table~\ref{tab:main} are too low for every setup. Count a finding as good if it either matched a known issue or was judged real. Then the plugin's findings were good 81\% of the time on Opus~5.5 and 72\% on Fable~5.2. The simple request's were good 63\% and 67\% of the time. So the plugin's lead is real on Opus~5.5 and small on Fable~5.2.
+
+Second, count good findings per review the same way. A review without the plugin gave about 7. A review with the plugin gave fewer than 2. The plugin's care did not lead to more real findings. It led to a shorter list.
+
+Another test set, AACR-Bench, reports the same kind of gap. Its makers say that having experts go over the problems again raised the number found by 285\% over what the original reviewers had written \citep{zhang2026aacr}.
+
+\section{What it means}
+
+\paragraph{What the plugin does.} On these pull requests the plugin worked like a filter. It gave a short list, and most of the list was right. It also missed most of what was there. The simple request gave a long list. That list had most of the known issues, more real ones that were not on the list, and more that were wrong.
+
+Which is better depends on who reads it. A team that sees every review note as an interruption may want the filter. A team that wants mistakes caught before the code ships did better, in this study, by just asking. It also paid less.
+
+\paragraph{About our idea.} The comparison between the two models leans toward ``plugins age badly''. It does not settle it. The clearer of the two results is about the share that matched. Part of the reason is that the newer model, with no plugin, seemed to score a little higher on both measures. That left the plugin less to add. We cannot be sure of that with a study this small. But it is one way a plugin can age: the model catches up with it.
+
+\paragraph{A second way a plugin can age.} The plugin gives bug hunting to ``Opus''. When we chose Fable~5.2, that work was still done by Opus~5.5. A person who moves up to a newer model does not get a newer review. Any plugin that names models for its helpers will fall behind until someone rewrites it. Our study cannot tell this apart from the steps simply fitting the newer model less well. For a user, both give the same result. For our idea, they are two different causes.
+
+\paragraph{A third way.} Opus~5.5 often did not follow the plugin's team process. It did the review alone, did about as well, and cost a third as much. A model that decides the steps are not needed, and skips them, is our idea seen from the model's side.
+
+\paragraph{What to do with this.}
+\begin{itemize}
+\item Read a plugin before you depend on it. This one picks its own models, covers less than its name suggests, and has a help page for an older design.
+\item Keep a record of which model answers each request, if you want to say what a model did or what it cost.
+\item Set the effort level yourself when you compare models.
+\item Test your instructions again when the model changes. Here that cost about \$136.
+\end{itemize}
+
+\section{What this study cannot show}
+\label{sec:threats}
+
+\paragraph{It is small.} Fifteen pull requests give wide ranges. The main gap, in the share of known issues found, is far wider than those ranges. The differences between the two models are not, except for one.
+
+\paragraph{It is a first look.} We did not set pass marks ahead of time. We thought of the check on unmatched findings, and the look at skipped helpers, after the main reviews were done. Treat every result as something to test again.
+
+\paragraph{The test set is public.} The pull requests and the known issues were on the internet well before either model came out. AI models are known to remember public test sets \citep{ramos2024memorizing,liang2025illusion}. That could push every score up. It could also tilt things toward our idea. Without the plugin, Fable~5.2 does the review, and as the newest model it may remember more. With the plugin, Opus~5.5 does the checking either way. Test sets that are refreshed with new material avoid this \citep{badertdinov2025rebench}.
+
+\paragraph{The wording of the simple request.} It says ``report every bug''. A request for only the surest findings would likely shorten the list. It might also narrow the gap in known issues found. We tried one wording.
+
+\paragraph{What the plugin is meant to cover.} The plugin tells its checkers to skip some kinds of problem that the test set counts. So part of its low score is the plugin doing as it was told. The Strict group leaves out style, documentation, speed, and missing-test problems, and the gap is still there.
+
+\paragraph{An AI did the grading.} Claude Sonnet~5.5 did both the matching and the checking. AI judges are known to favour their own work and the work of related models \citep{zheng2023judging,panickssery2024self,spiliopoulou2025favorites}. Every reviewer here was a Claude model, so that should not clearly favour one setup. But the plugin does use Sonnet~5.5 for one small step. The test set's own saved results change by several points when the judge changes. A second AI review of 30 of the checker's answers agreed with 24 of them. No person checked the judge's or the checker's answers. That is the biggest thing missing.
+
+\paragraph{No clean cases.} Every pull request had known issues. So we did not measure how often a review raises a false alarm on code that is fine.
+
+\paragraph{The two models are not a clean comparison.} With the plugin, the checking was done by Opus~5.5 whichever model we chose. And Opus~5.5 skipped the helpers in 43\% of its plugin reviews. So the difference between the models mixes three things: how well the steps fit, which model did the work, and whether the steps were followed.
+
+\paragraph{No project history.} Our copies had no history, unlike the usual use of this test set. Our numbers should not be lined up exactly against its public scoreboard.
+
+\paragraph{No one was there to give permission.} The reviews ran unattended. When the AI tried a command outside the read-only set, it was turned down. A person at the keyboard would have been asked. This happened about one to three times per review, depending on the setup.
+
+\paragraph{The service can change.} A model's name fixes the model. It does not fix everything around it. All our reviews ran on 15 and 16 November 2026.
+
+\paragraph{One plugin, one version, two models.} None of this tells us about other plugins. Other studies find that well-made skills can help \citep{li2026skillsbench}.
+
+\section{Earlier work}
+\label{sec:related}
+
+\paragraph{Do instructions keep working as models change?} Others have asked this. Small changes in wording or layout can move results a lot \citep{sclar2023sensitivity}. A model sold under one name can behave differently months later \citep{chen2023chatgpt}. Quiet updates can make existing instructions work worse \citep{ma2023regression}. Several studies find that well-known prompting tricks help less on newer models \citep{meincke2025cot,wang2024advanced}.
+
+The study closest to our idea is by \citet{rudyk2026aging}. They test five general prompting methods on pairs of older and newer models. They report that newer GPT models gain little or even lose from structured prompting, and that the pattern differs by model family. The study closest to our method is by \citet{salsabil2026survives}. They find that for 37\% to 63\% of 35 recent research tools, a single prompt on a newer model beats the tool.
+
+Ours differs in what is tested: one fixed product, shipped by the model's maker, run unchanged on two models, against a simple request.
+
+\paragraph{Do add-on skills and instruction files help?} The evidence goes both ways. \citet{gloaguen2026agentsmd} find that project instruction files generally do not raise success, and add over 20\% to cost. \citet{ying2026openskilleval} find that many popular community skills do not reliably beat an AI with no skill. \citet{han2026sweskills} test 98 software skills and find that skills give limited benefit overall. On the other side, \citet{li2026skillsbench} find that carefully chosen skills raise the average pass rate from 33.9\% to 50.5\%. And \citet{cho2026harness} reports that stronger models do not steadily need less structure. Our idea should be weighed against both sides.
+
+\paragraph{Testing AI code review.} Test sets include CodeReviewer \citep{li2022codereviewer}, SWR-Bench \citep{zeng2025swr}, AACR-Bench \citep{zhang2026aacr}, c-CRAB \citep{zhang2026ccrab}, and CR-Bench \citep{pereira2026crbench}. \citet{sun2025bitsai} describe a review tool used inside a large company. The trade-off we saw is known. \citet{pereira2026crbench} report that review agents built to find everything can bury the useful findings in noise. \citet{zeng2025swr} find that combining several reviews raises scores a good deal. We found no study that compares a model maker's own plugin with a simple request on the same model. We found none that goes back and checks the unmatched findings.
+
+\paragraph{Teams of AI helpers.} The plugin is a team design with a double-check step. \citet{cemri2025mas} list the ways such teams fail. \citet{kim2025scaling} report results from large gains to large losses, depending on the task. \citet{tran2026single} find that one AI matches or beats a team when both get the same amount of thinking.
+
+\paragraph{Which model is really answering?} Others have studied whether a service gives you the model it names \citep{gao2024equality,cai2025substitution}. We add a case inside a coding tool. The switch is one the maker documents, and the tool's own summary did not show it.
+
+\section{Conclusion}
+
+We tested Anthropic's official code-review plugin on 15 real pull requests and two current models. It found about half as many known issues as a one-paragraph request. It cost about one and a half times as much. Its list was shorter and somewhat cleaner. Its lead on that last point was smaller on the newer model. It did not use the newer model for its checking. And the older model often set its steps aside.
+
+The idea that plugins age badly got some support. It is not proven. A stronger test would need:
+\begin{itemize}
+\item code changes made public after the models were trained;
+\item some code with no mistakes, to measure false alarms;
+\item a setup that makes every helper use one model;
+\item the plugin's older version;
+\item more models, older and newer;
+\item grading checked by people;
+\item pass marks set ahead of time.
+\end{itemize}
+The method is cheap enough to run each time a new model comes out. That is what the question needs.
+
+\section*{Where to find the method and data}
+
+The testing programs, the results for every review, and the files that build this paper are public at \url{https://github.com/sideofmydesk/frontier-eval}. The method, the choices we made, and the limits are written up at \url{https://github.com/sideofmydesk/frontier-eval/wiki}. This paper and a summary are at \url{https://research.sideofmydesk.com}.
+
+What we fixed in place: Claude Code version 2.1.325; plugin version \texttt{9780cf4}; test set version \texttt{e616e84}; models \texttt{claude-opus-5-5} and \texttt{claude-fable-5-2}; judge and checker \texttt{claude-sonnet-5-5}. The copies of the 15 pull requests are private, because they hold other projects' code. The public programs can make them again from the test set.
+
+\section*{How AI was used in this work}
+
+This study was done with a great deal of help from Claude Code, Anthropic's AI coding tool. Under the author's direction, it wrote the testing programs, ran the reviews, did the analysis, searched for earlier work, and drafted this paper. The author made the design choices and is responsible for what the paper says. The tool we tested, the models that graded it, and the assistant that helped are all Claude models from one company. Readers should keep that in mind.
+
+\section*{Funding and competing interests}
+
+The reviews cost about \$136. This was paid from promotional credits that came with the author's Anthropic subscription. The author has no other financial tie to Anthropic. Anthropic had no part in this work.
+
+\section*{Licence}
+
+This work is licensed under CC BY 4.0 (\url{https://creativecommons.org/licenses/by/4.0/}).
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

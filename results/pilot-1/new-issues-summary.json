@@ -1,0 +1,127 @@
+{
+ "note": "Issues not in the benchmark's golden comments. 'Real' is a checker model's verdict from the diff alone; not confirmed by hand.",
+ "verdicts_by_cell": {
+  "opus55/plugin": {
+   "real": 17,
+   "not_real": 3,
+   "cannot_tell": 9
+  },
+  "opus55/baseline": {
+   "real": 132,
+   "not_real": 82,
+   "cannot_tell": 45
+  },
+  "fable52/plugin": {
+   "real": 21,
+   "not_real": 8,
+   "cannot_tell": 12
+  },
+  "fable52/baseline": {
+   "real": 115,
+   "cannot_tell": 56,
+   "not_real": 43
+  }
+ },
+ "verdict_totals": {
+  "real": 285,
+  "not_real": 136,
+  "cannot_tell": 122
+ },
+ "distinct_new_issues": 123,
+ "per_case": {
+  "fe-case-001": 17,
+  "fe-case-002": 6,
+  "fe-case-003": 2,
+  "fe-case-004": 24,
+  "fe-case-005": 5,
+  "fe-case-006": 1,
+  "fe-case-007": 5,
+  "fe-case-008": 12,
+  "fe-case-009": 4,
+  "fe-case-010": 10,
+  "fe-case-011": 8,
+  "fe-case-012": 3,
+  "fe-case-013": 19,
+  "fe-case-014": 3,
+  "fe-case-015": 4
+ },
+ "by_category": {
+  "bug": 59,
+  "test_gap": 25,
+  "security": 10,
+  "style": 9,
+  "perf": 6,
+  "data": 5,
+  "doc_defect": 5,
+  "api": 2,
+  "concurrency": 2
+ },
+ "by_severity": {
+  "Medium": 57,
+  "High": 26,
+  "Low": 39,
+  "Critical": 1
+ },
+ "distinct_found_by_cell": {
+  "opus55/plugin": 14,
+  "opus55/baseline": 94,
+  "fable52/plugin": 18,
+  "fable52/baseline": 80
+ },
+ "distinct_found_by_arm": {
+  "plugin": 24,
+  "baseline": 118
+ },
+ "overlap": {
+  "plugin_only": 5,
+  "baseline_only": 99,
+  "both": 19
+ },
+ "found_in_runs_distribution": {
+  "1": 45,
+  "2": 36,
+  "3": 17,
+  "4": 18,
+  "5": 3,
+  "6": 2,
+  "8": 2
+ },
+ "by_arm_and_category": {
+  "plugin": {
+   "bug": 9,
+   "security": 5,
+   "test_gap": 2,
+   "style": 2,
+   "data": 2,
+   "doc_defect": 2,
+   "perf": 1,
+   "api": 1
+  },
+  "baseline": {
+   "bug": 57,
+   "test_gap": 24,
+   "security": 9,
+   "style": 8,
+   "perf": 6,
+   "data": 5,
+   "doc_defect": 5,
+   "api": 2,
+   "concurrency": 2
+  }
+ },
+ "by_arm_and_severity": {
+  "plugin": {
+   "Medium": 13,
+   "Low": 4,
+   "High": 6,
+   "Critical": 1
+  },
+  "baseline": {
+   "Medium": 55,
+   "High": 25,
+   "Low": 37,
+   "Critical": 1
+  }
+ },
+ "grouping_problems": 1
+}

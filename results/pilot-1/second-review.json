@@ -1,0 +1,197 @@
+{
+ "note": "A second review of 30 randomly drawn checker verdicts (20 real, 10 not real; seed 20261116). The second reviewer was Claude Fable 5.2 with read access to the full repository for each case, and was not shown the first verdict. Both reviews are model judgements; no person checked either.",
+ "sample": 30,
+ "agreement": 24,
+ "first_real": {
+  "n": 20,
+  "second_real": 16,
+  "second_not_real": 4
+ },
+ "first_not_real": {
+  "n": 10,
+  "second_real": 2,
+  "second_not_real": 8
+ },
+ "items": [
+  {
+   "finding_id": "r2-fe-case-013-fable52-baseline#10",
+   "first_checker": "not_real",
+   "second_review": "real",
+   "second_review_confidence": "low"
+  },
+  {
+   "finding_id": "r2-fe-case-001-opus55-baseline#2",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r2-fe-case-007-fable52-baseline#5",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r2-fe-case-004-opus55-baseline#10",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "low"
+  },
+  {
+   "finding_id": "r2-fe-case-010-opus55-baseline#3",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r2-fe-case-015-fable52-plugin#0",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-001-fable52-baseline#3",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-009-fable52-baseline#7",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-009-fable52-baseline#0",
+   "first_checker": "real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-013-opus55-plugin#0",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r1-fe-case-002-fable52-plugin#0",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-006-fable52-baseline#4",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r2-fe-case-001-opus55-baseline#6",
+   "first_checker": "real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-004-fable52-plugin#0",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-013-opus55-baseline#8",
+   "first_checker": "real",
+   "second_review": "not_real",
+   "second_review_confidence": "low"
+  },
+  {
+   "finding_id": "r1-fe-case-013-opus55-baseline#10",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "low"
+  },
+  {
+   "finding_id": "r1-fe-case-007-opus55-baseline#3",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r2-fe-case-008-fable52-baseline#4",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-006-opus55-plugin#1",
+   "first_checker": "not_real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-008-fable52-baseline#3",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r1-fe-case-004-opus55-plugin#0",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r1-fe-case-003-opus55-baseline#1",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r1-fe-case-002-fable52-baseline#5",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r2-fe-case-009-opus55-baseline#5",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "low"
+  },
+  {
+   "finding_id": "r2-fe-case-014-fable52-plugin#1",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r1-fe-case-008-fable52-baseline#5",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r2-fe-case-008-fable52-baseline#9",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-004-fable52-baseline#1",
+   "first_checker": "real",
+   "second_review": "real",
+   "second_review_confidence": "medium"
+  },
+  {
+   "finding_id": "r1-fe-case-001-opus55-baseline#7",
+   "first_checker": "not_real",
+   "second_review": "not_real",
+   "second_review_confidence": "high"
+  },
+  {
+   "finding_id": "r2-fe-case-010-opus55-baseline#5",
+   "first_checker": "real",
+   "second_review": "not_real",
+   "second_review_confidence": "medium"
+  }
+ ]
+}

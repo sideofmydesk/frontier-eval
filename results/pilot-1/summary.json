@@ -1,0 +1,1223 @@
+{
+ "runs_total": 120,
+ "runs_scored": 119,
+ "cases": 15,
+ "bootstrap": {
+  "resamples": 10000,
+  "seed": 20261116,
+  "unit": "case"
+ },
+ "accounting": {
+  "opus55/plugin": {
+   "completed": 30
+  },
+  "opus55/baseline": {
+   "completed": 30
+  },
+  "fable52/plugin": {
+   "completed": 29,
+   "refused": 1
+  },
+  "fable52/baseline": {
+   "completed": 30
+  }
+ },
+ "totals": {
+  "opus55/plugin": {
+   "golden_strict": 84,
+   "tp_strict": 31,
+   "golden_core": 94,
+   "tp_core": 32,
+   "golden_all": 106,
+   "tp_all": 33,
+   "fp": 29,
+   "cand": 63,
+   "runs": 30,
+   "cost": 17.962596684999998
+  },
+  "opus55/baseline": {
+   "golden_strict": 84,
+   "tp_strict": 59,
+   "golden_core": 94,
+   "tp_core": 64,
+   "golden_all": 106,
+   "tp_all": 70,
+   "fp": 259,
+   "cand": 339,
+   "runs": 30,
+   "cost": 12.2276488
+  },
+  "fable52/plugin": {
+   "golden_strict": 76,
+   "tp_strict": 28,
+   "golden_core": 86,
+   "tp_core": 29,
+   "golden_all": 98,
+   "tp_all": 31,
+   "fp": 41,
+   "cand": 72,
+   "runs": 29,
+   "cost": 50.802265410000004
+  },
+  "fable52/baseline": {
+   "golden_strict": 84,
+   "tp_strict": 64,
+   "golden_core": 94,
+   "tp_core": 71,
+   "golden_all": 106,
+   "tp_all": 77,
+   "fp": 214,
+   "cand": 302,
+   "runs": 30,
+   "cost": 34.1696444
+  }
+ },
+ "estimates": {
+  "opus55/plugin:recall_strict": {
+   "value": 0.36904761904761907,
+   "lo": 0.22807017543859648,
+   "hi": 0.55,
+   "share_above_zero": null
+  },
+  "opus55/plugin:precision_strict": {
+   "value": 0.5166666666666667,
+   "lo": 0.3392781476997579,
+   "hi": 0.7021276595744681,
+   "share_above_zero": null
+  },
+  "opus55/plugin:recall_core": {
+   "value": 0.3404255319148936,
+   "lo": 0.2131109593199757,
+   "hi": 0.5,
+   "share_above_zero": null
+  },
+  "opus55/plugin:precision_core": {
+   "value": 0.5245901639344263,
+   "lo": 0.3469387755102041,
+   "hi": 0.7090909090909091,
+   "share_above_zero": null
+  },
+  "opus55/plugin:recall_all": {
+   "value": 0.3113207547169811,
+   "lo": 0.19386932192231732,
+   "hi": 0.45454545454545453,
+   "share_above_zero": null
+  },
+  "opus55/plugin:precision_all": {
+   "value": 0.532258064516129,
+   "lo": 0.35714285714285715,
+   "hi": 0.7125446428571423,
+   "share_above_zero": null
+  },
+  "opus55/plugin:findings_per_run": {
+   "value": 2.1,
+   "lo": 1.5333333333333334,
+   "hi": 2.7666666666666666,
+   "share_above_zero": null
+  },
+  "opus55/plugin:unmatched_per_run": {
+   "value": 0.9666666666666667,
+   "lo": 0.5333333333333333,
+   "hi": 1.4333333333333333,
+   "share_above_zero": null
+  },
+  "opus55/plugin:cost_per_run": {
+   "value": 0.5987532228333332,
+   "lo": 0.4327240785333333,
+   "hi": 0.8140652543375,
+   "share_above_zero": null
+  },
+  "opus55/baseline:recall_strict": {
+   "value": 0.7023809523809523,
+   "lo": 0.5916666666666667,
+   "hi": 0.8392857142857143,
+   "share_above_zero": null
+  },
+  "opus55/baseline:precision_strict": {
+   "value": 0.18553459119496854,
+   "lo": 0.1374981725146199,
+   "hi": 0.23255813953488372,
+   "share_above_zero": null
+  },
+  "opus55/baseline:recall_core": {
+   "value": 0.6808510638297872,
+   "lo": 0.5595238095238095,
+   "hi": 0.825,
+   "share_above_zero": null
+  },
+  "opus55/baseline:precision_core": {
+   "value": 0.19814241486068113,
+   "lo": 0.15915915915915915,
+   "hi": 0.24193691883825047,
+   "share_above_zero": null
+  },
+  "opus55/baseline:recall_all": {
+   "value": 0.660377358490566,
+   "lo": 0.5468659156976744,
+   "hi": 0.7857142857142857,
+   "share_above_zero": null
+  },
+  "opus55/baseline:precision_all": {
+   "value": 0.2127659574468085,
+   "lo": 0.16927779117434288,
+   "hi": 0.26197235070942254,
+   "share_above_zero": null
+  },
+  "opus55/baseline:findings_per_run": {
+   "value": 11.3,
+   "lo": 9.166666666666666,
+   "hi": 13.8,
+   "share_above_zero": null
+  },
+  "opus55/baseline:unmatched_per_run": {
+   "value": 8.633333333333333,
+   "lo": 6.733333333333333,
+   "hi": 10.8,
+   "share_above_zero": null
+  },
+  "opus55/baseline:cost_per_run": {
+   "value": 0.40758829333333335,
+   "lo": 0.333496073,
+   "hi": 0.5078191943333333,
+   "share_above_zero": null
+  },
+  "fable52/plugin:recall_strict": {
+   "value": 0.3684210526315789,
+   "lo": 0.23076923076923078,
+   "hi": 0.5192307692307693,
+   "share_above_zero": null
+  },
+  "fable52/plugin:precision_strict": {
+   "value": 0.4057971014492754,
+   "lo": 0.26314144736842104,
+   "hi": 0.5423728813559322,
+   "share_above_zero": null
+  },
+  "fable52/plugin:recall_core": {
+   "value": 0.3372093023255814,
+   "lo": 0.2159090909090909,
+   "hi": 0.4714285714285714,
+   "share_above_zero": null
+  },
+  "fable52/plugin:precision_core": {
+   "value": 0.4142857142857143,
+   "lo": 0.28125,
+   "hi": 0.5454545454545454,
+   "share_above_zero": null
+  },
+  "fable52/plugin:recall_all": {
+   "value": 0.3163265306122449,
+   "lo": 0.19642857142857142,
+   "hi": 0.4479166666666667,
+   "share_above_zero": null
+  },
+  "fable52/plugin:precision_all": {
+   "value": 0.4305555555555556,
+   "lo": 0.2878787878787879,
+   "hi": 0.5696654611211567,
+   "share_above_zero": null
+  },
+  "fable52/plugin:findings_per_run": {
+   "value": 2.4827586206896552,
+   "lo": 2.033333333333333,
+   "hi": 3.0,
+   "share_above_zero": null
+  },
+  "fable52/plugin:unmatched_per_run": {
+   "value": 1.4137931034482758,
+   "lo": 1.0333333333333334,
+   "hi": 1.8,
+   "share_above_zero": null
+  },
+  "fable52/plugin:cost_per_run": {
+   "value": 1.7518022555172414,
+   "lo": 1.4705569434114942,
+   "hi": 2.1308101055064657,
+   "share_above_zero": null
+  },
+  "fable52/baseline:recall_strict": {
+   "value": 0.7619047619047619,
+   "lo": 0.6538461538461539,
+   "hi": 0.890625,
+   "share_above_zero": null
+  },
+  "fable52/baseline:precision_strict": {
+   "value": 0.2302158273381295,
+   "lo": 0.17028792784458835,
+   "hi": 0.2837213325822805,
+   "share_above_zero": null
+  },
+  "fable52/baseline:recall_core": {
+   "value": 0.7553191489361702,
+   "lo": 0.6607058625336927,
+   "hi": 0.872093023255814,
+   "share_above_zero": null
+  },
+  "fable52/baseline:precision_core": {
+   "value": 0.24912280701754386,
+   "lo": 0.19745119864778515,
+   "hi": 0.29965156794425085,
+   "share_above_zero": null
+  },
+  "fable52/baseline:recall_all": {
+   "value": 0.7264150943396226,
+   "lo": 0.63,
+   "hi": 0.8333333333333334,
+   "share_above_zero": null
+  },
+  "fable52/baseline:precision_all": {
+   "value": 0.2646048109965636,
+   "lo": 0.2099644128113879,
+   "hi": 0.3201585361625407,
+   "share_above_zero": null
+  },
+  "fable52/baseline:findings_per_run": {
+   "value": 10.066666666666666,
+   "lo": 8.333333333333334,
+   "hi": 11.866666666666667,
+   "share_above_zero": null
+  },
+  "fable52/baseline:unmatched_per_run": {
+   "value": 7.133333333333334,
+   "lo": 5.533333333333333,
+   "hi": 8.766666666666667,
+   "share_above_zero": null
+  },
+  "fable52/baseline:cost_per_run": {
+   "value": 1.1389881466666667,
+   "lo": 0.9296557945,
+   "hi": 1.4111494545,
+   "share_above_zero": null
+  },
+  "opus55:plugin_minus_baseline:recall_strict": {
+   "value": -0.33333333333333326,
+   "lo": -0.4473684210526316,
+   "hi": -0.22580645161290325,
+   "share_above_zero": 0.0
+  },
+  "opus55:plugin_minus_baseline:recall_core": {
+   "value": -0.3404255319148936,
+   "lo": -0.4583333333333333,
+   "hi": -0.23684210526315785,
+   "share_above_zero": 0.0
+  },
+  "opus55:plugin_minus_baseline:recall_all": {
+   "value": -0.3490566037735849,
+   "lo": -0.4509863701578193,
+   "hi": -0.25,
+   "share_above_zero": 0.0
+  },
+  "opus55:plugin_minus_baseline:precision_strict": {
+   "value": 0.3311320754716982,
+   "lo": 0.18553984741514415,
+   "hi": 0.4825451559934318,
+   "share_above_zero": 0.9999
+  },
+  "opus55:plugin_minus_baseline:precision_core": {
+   "value": 0.32644774907374513,
+   "lo": 0.18057880403988896,
+   "hi": 0.4758249303763717,
+   "share_above_zero": 0.9999
+  },
+  "opus55:plugin_minus_baseline:precision_all": {
+   "value": 0.3194921070693205,
+   "lo": 0.17852371458669397,
+   "hi": 0.46581407985992546,
+   "share_above_zero": 0.9999
+  },
+  "opus55:plugin_minus_baseline:findings_per_run": {
+   "value": -9.200000000000001,
+   "lo": -11.5,
+   "hi": -7.199999999999999,
+   "share_above_zero": 0.0
+  },
+  "opus55:plugin_minus_baseline:unmatched_per_run": {
+   "value": -7.666666666666666,
+   "lo": -9.666666666666666,
+   "hi": -5.866666666666667,
+   "share_above_zero": 0.0
+  },
+  "opus55:plugin_minus_baseline:cost_per_run": {
+   "value": 0.19116492949999986,
+   "lo": 0.015574193083333387,
+   "hi": 0.3960207311374998,
+   "share_above_zero": 0.9837
+  },
+  "fable52:plugin_minus_baseline:recall_strict": {
+   "value": -0.39348370927318294,
+   "lo": -0.4994591746016421,
+   "hi": -0.29999999999999993,
+   "share_above_zero": 0.0
+  },
+  "fable52:plugin_minus_baseline:recall_core": {
+   "value": -0.41810984661058886,
+   "lo": -0.5113636363636364,
+   "hi": -0.34252583149418475,
+   "share_above_zero": 0.0
+  },
+  "fable52:plugin_minus_baseline:recall_all": {
+   "value": -0.4100885637273777,
+   "lo": -0.5098039215686274,
+   "hi": -0.3191489361702128,
+   "share_above_zero": 0.0
+  },
+  "fable52:plugin_minus_baseline:precision_strict": {
+   "value": 0.17558127411114588,
+   "lo": 0.059644146072914135,
+   "hi": 0.27918900691037496,
+   "share_above_zero": 0.9979
+  },
+  "fable52:plugin_minus_baseline:precision_core": {
+   "value": 0.16516290726817046,
+   "lo": 0.050219203693469265,
+   "hi": 0.26599810240497934,
+   "share_above_zero": 0.9966
+  },
+  "fable52:plugin_minus_baseline:precision_all": {
+   "value": 0.165950744558992,
+   "lo": 0.04117519735166791,
+   "hi": 0.2745119131078343,
+   "share_above_zero": 0.9947
+  },
+  "fable52:plugin_minus_baseline:findings_per_run": {
+   "value": -7.583908045977012,
+   "lo": -9.252380952380953,
+   "hi": -6.033333333333333,
+   "share_above_zero": 0.0
+  },
+  "fable52:plugin_minus_baseline:unmatched_per_run": {
+   "value": -5.719540229885058,
+   "lo": -7.170370370370371,
+   "hi": -4.300000000000001,
+   "share_above_zero": 0.0
+  },
+  "fable52:plugin_minus_baseline:cost_per_run": {
+   "value": 0.6128141088505747,
+   "lo": 0.481916712639368,
+   "hi": 0.7610533006477008,
+   "share_above_zero": 1.0
+  },
+  "fable_minus_opus:plugin_advantage:recall_strict": {
+   "value": -0.060150375939849676,
+   "lo": -0.125,
+   "hi": 0.015532394564652689,
+   "share_above_zero": 0.0409
+  },
+  "fable_minus_opus:plugin_advantage:recall_core": {
+   "value": -0.07768431469569526,
+   "lo": -0.16250000000000003,
+   "hi": 0.019057472008308853,
+   "share_above_zero": 0.0478
+  },
+  "fable_minus_opus:plugin_advantage:recall_all": {
+   "value": -0.06103195995379279,
+   "lo": -0.14527765094964068,
+   "hi": 0.03686037409360582,
+   "share_above_zero": 0.0929
+  },
+  "fable_minus_opus:plugin_advantage:precision_strict": {
+   "value": -0.15555080136055233,
+   "lo": -0.29709164003676214,
+   "hi": -0.045101822269302136,
+   "share_above_zero": 0.0033
+  },
+  "fable_minus_opus:plugin_advantage:precision_core": {
+   "value": -0.16128484180557467,
+   "lo": -0.3038152676479938,
+   "hi": -0.04959438260491775,
+   "share_above_zero": 0.0026
+  },
+  "fable_minus_opus:plugin_advantage:precision_all": {
+   "value": -0.15354136251032852,
+   "lo": -0.3012991670498677,
+   "hi": -0.032086918100880074,
+   "share_above_zero": 0.0073
+  }
+ },
+ "per_case": [
+  {
+   "case": "fe-case-001",
+   "project": "cal_dot_com",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 6.0,
+    "found": 4,
+    "golden": 12,
+    "unmatched": 0,
+    "findings": 4
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 6.0,
+    "found": 8,
+    "golden": 12,
+    "unmatched": 24,
+    "findings": 33
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 6.0,
+    "found": 4,
+    "golden": 12,
+    "unmatched": 3,
+    "findings": 7
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 6.0,
+    "found": 9,
+    "golden": 12,
+    "unmatched": 20,
+    "findings": 29
+   }
+  },
+  {
+   "case": "fe-case-002",
+   "project": "cal_dot_com",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 2,
+    "findings": 2
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 15,
+    "findings": 17
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 1,
+    "golden": 4,
+    "unmatched": 4,
+    "findings": 5
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 14,
+    "findings": 16
+   }
+  },
+  {
+   "case": "fe-case-003",
+   "project": "cal_dot_com",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 2,
+    "findings": 3
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 6,
+    "findings": 15
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 0,
+    "findings": 2
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 3,
+    "findings": 13
+   }
+  },
+  {
+   "case": "fe-case-004",
+   "project": "discourse",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 8.0,
+    "found": 2,
+    "golden": 16,
+    "unmatched": 5,
+    "findings": 7
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 8.0,
+    "found": 8,
+    "golden": 16,
+    "unmatched": 37,
+    "findings": 45
+   },
+   "fable52/plugin": {
+    "runs": 1,
+    "golden_per_run": 8.0,
+    "found": 0,
+    "golden": 8,
+    "unmatched": 2,
+    "findings": 2
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 8.0,
+    "found": 9,
+    "golden": 16,
+    "unmatched": 25,
+    "findings": 34
+   }
+  },
+  {
+   "case": "fe-case-005",
+   "project": "discourse",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 6,
+    "golden": 8,
+    "unmatched": 0,
+    "findings": 7
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 8,
+    "golden": 8,
+    "unmatched": 11,
+    "findings": 20
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 5,
+    "golden": 8,
+    "unmatched": 1,
+    "findings": 8
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 8,
+    "golden": 8,
+    "unmatched": 11,
+    "findings": 23
+   }
+  },
+  {
+   "case": "fe-case-006",
+   "project": "discourse",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 5,
+    "findings": 5
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 10,
+    "findings": 10
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 4,
+    "findings": 4
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 9,
+    "findings": 11
+   }
+  },
+  {
+   "case": "fe-case-007",
+   "project": "grafana",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 3,
+    "golden": 10,
+    "unmatched": 3,
+    "findings": 6
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 4,
+    "golden": 10,
+    "unmatched": 16,
+    "findings": 20
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 2,
+    "golden": 10,
+    "unmatched": 1,
+    "findings": 3
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 5,
+    "golden": 10,
+    "unmatched": 17,
+    "findings": 22
+   }
+  },
+  {
+   "case": "fe-case-008",
+   "project": "grafana",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 6,
+    "golden": 6,
+    "unmatched": 5,
+    "findings": 11
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 6,
+    "golden": 6,
+    "unmatched": 23,
+    "findings": 30
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 4,
+    "golden": 6,
+    "unmatched": 5,
+    "findings": 9
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 6,
+    "golden": 6,
+    "unmatched": 23,
+    "findings": 29
+   }
+  },
+  {
+   "case": "fe-case-009",
+   "project": "grafana",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 1,
+    "golden": 6,
+    "unmatched": 1,
+    "findings": 2
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 3,
+    "golden": 6,
+    "unmatched": 13,
+    "findings": 16
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 2,
+    "golden": 6,
+    "unmatched": 2,
+    "findings": 4
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 5,
+    "golden": 6,
+    "unmatched": 12,
+    "findings": 17
+   }
+  },
+  {
+   "case": "fe-case-010",
+   "project": "keycloak",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 2,
+    "golden": 10,
+    "unmatched": 0,
+    "findings": 3
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 8,
+    "golden": 10,
+    "unmatched": 22,
+    "findings": 30
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 1,
+    "golden": 10,
+    "unmatched": 5,
+    "findings": 6
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 5.0,
+    "found": 8,
+    "golden": 10,
+    "unmatched": 14,
+    "findings": 22
+   }
+  },
+  {
+   "case": "fe-case-011",
+   "project": "keycloak",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 2,
+    "findings": 2
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 22,
+    "findings": 28
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 4,
+    "findings": 4
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 20,
+    "findings": 25
+   }
+  },
+  {
+   "case": "fe-case-012",
+   "project": "keycloak",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 0,
+    "findings": 2
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 3,
+    "golden": 4,
+    "unmatched": 12,
+    "findings": 15
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 3,
+    "golden": 4,
+    "unmatched": 2,
+    "findings": 5
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 4,
+    "golden": 4,
+    "unmatched": 6,
+    "findings": 10
+   }
+  },
+  {
+   "case": "fe-case-013",
+   "project": "sentry",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 0,
+    "golden": 4,
+    "unmatched": 3,
+    "findings": 3
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 2,
+    "golden": 4,
+    "unmatched": 26,
+    "findings": 28
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 1,
+    "golden": 4,
+    "unmatched": 4,
+    "findings": 5
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 2.0,
+    "found": 1,
+    "golden": 4,
+    "unmatched": 22,
+    "findings": 23
+   }
+  },
+  {
+   "case": "fe-case-014",
+   "project": "sentry",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 2,
+    "golden": 8,
+    "unmatched": 1,
+    "findings": 3
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 5,
+    "golden": 8,
+    "unmatched": 8,
+    "findings": 13
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 2,
+    "golden": 8,
+    "unmatched": 3,
+    "findings": 5
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 4.0,
+    "found": 5,
+    "golden": 8,
+    "unmatched": 10,
+    "findings": 15
+   }
+  },
+  {
+   "case": "fe-case-015",
+   "project": "sentry",
+   "opus55/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 3,
+    "golden": 6,
+    "unmatched": 0,
+    "findings": 3
+   },
+   "opus55/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 5,
+    "golden": 6,
+    "unmatched": 14,
+    "findings": 19
+   },
+   "fable52/plugin": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 2,
+    "golden": 6,
+    "unmatched": 1,
+    "findings": 3
+   },
+   "fable52/baseline": {
+    "runs": 2,
+    "golden_per_run": 3.0,
+    "found": 5,
+    "golden": 6,
+    "unmatched": 8,
+    "findings": 13
+   }
+  }
+ ],
+ "consistency": {
+  "opus55/plugin": {
+   "golden_with_two_runs": 53,
+   "found_in_both": 13,
+   "found_in_one": 7,
+   "found_in_neither": 33,
+   "agreement": 0.8679245283018868,
+   "found_both_given_found_any": 0.65
+  },
+  "opus55/baseline": {
+   "golden_with_two_runs": 53,
+   "found_in_both": 32,
+   "found_in_one": 6,
+   "found_in_neither": 15,
+   "agreement": 0.8867924528301887,
+   "found_both_given_found_any": 0.8421052631578947
+  },
+  "fable52/plugin": {
+   "golden_with_two_runs": 45,
+   "found_in_both": 12,
+   "found_in_one": 7,
+   "found_in_neither": 26,
+   "agreement": 0.8444444444444444,
+   "found_both_given_found_any": 0.631578947368421
+  },
+  "fable52/baseline": {
+   "golden_with_two_runs": 53,
+   "found_in_both": 35,
+   "found_in_one": 7,
+   "found_in_neither": 11,
+   "agreement": 0.8679245283018868,
+   "found_both_given_found_any": 0.8333333333333334
+  }
+ },
+ "severity": {
+  "opus55/plugin": {
+   "High": {
+    "golden": 24,
+    "found": 10,
+    "recall": 0.4166666666666667
+   },
+   "Critical": {
+    "golden": 10,
+    "found": 3,
+    "recall": 0.3
+   },
+   "Medium": {
+    "golden": 40,
+    "found": 16,
+    "recall": 0.4
+   },
+   "Low": {
+    "golden": 32,
+    "found": 4,
+    "recall": 0.125
+   }
+  },
+  "opus55/baseline": {
+   "High": {
+    "golden": 24,
+    "found": 20,
+    "recall": 0.8333333333333334
+   },
+   "Critical": {
+    "golden": 10,
+    "found": 6,
+    "recall": 0.6
+   },
+   "Medium": {
+    "golden": 40,
+    "found": 27,
+    "recall": 0.675
+   },
+   "Low": {
+    "golden": 32,
+    "found": 17,
+    "recall": 0.53125
+   }
+  },
+  "fable52/plugin": {
+   "High": {
+    "golden": 23,
+    "found": 10,
+    "recall": 0.43478260869565216
+   },
+   "Critical": {
+    "golden": 8,
+    "found": 5,
+    "recall": 0.625
+   },
+   "Medium": {
+    "golden": 35,
+    "found": 10,
+    "recall": 0.2857142857142857
+   },
+   "Low": {
+    "golden": 32,
+    "found": 6,
+    "recall": 0.1875
+   }
+  },
+  "fable52/baseline": {
+   "High": {
+    "golden": 24,
+    "found": 22,
+    "recall": 0.9166666666666666
+   },
+   "Critical": {
+    "golden": 10,
+    "found": 8,
+    "recall": 0.8
+   },
+   "Medium": {
+    "golden": 40,
+    "found": 28,
+    "recall": 0.7
+   },
+   "Low": {
+    "golden": 32,
+    "found": 19,
+    "recall": 0.59375
+   }
+  }
+ },
+ "tiers": {
+  "opus55/plugin": {
+   "Haiku 5.5": {
+    "requests_per_run": 2.3333333333333335,
+    "cost_per_run": 0.0015834295000000003,
+    "output_tokens_per_run": 1080.2333333333333
+   },
+   "Opus 5.5": {
+    "requests_per_run": 14.4,
+    "cost_per_run": 0.5556633266666666,
+    "output_tokens_per_run": 10218.966666666667
+   },
+   "Sonnet 5.5": {
+    "requests_per_run": 1.7,
+    "cost_per_run": 0.04150646666666667,
+    "output_tokens_per_run": 958.7333333333333
+   }
+  },
+  "opus55/baseline": {
+   "Opus 5.5": {
+    "requests_per_run": 9.8,
+    "cost_per_run": 0.4075882933333333,
+    "output_tokens_per_run": 7534.5
+   }
+  },
+  "fable52/plugin": {
+   "Fable 5.2": {
+    "requests_per_run": 7.172413793103448,
+    "cost_per_run": 0.9112869862068963,
+    "output_tokens_per_run": 11481.551724137931
+   },
+   "Haiku 5.5": {
+    "requests_per_run": 5.862068965517241,
+    "cost_per_run": 0.004274141724137931,
+    "output_tokens_per_run": 3243.793103448276
+   },
+   "Sonnet 5.5": {
+    "requests_per_run": 4.551724137931035,
+    "cost_per_run": 0.09013045172413796,
+    "output_tokens_per_run": 2605.2758620689656
+   },
+   "Opus 5.5": {
+    "requests_per_run": 18.689655172413794,
+    "cost_per_run": 0.7461106758620698,
+    "output_tokens_per_run": 13983.965517241379
+   }
+  },
+  "fable52/baseline": {
+   "Fable 5.2": {
+    "requests_per_run": 8.3,
+    "cost_per_run": 1.1389881466666665,
+    "output_tokens_per_run": 12835.2
+   }
+  }
+ },
+ "delegation": {
+  "opus55": {
+   "plugin_runs": 30,
+   "patterns": {
+    "Haiku 5.5 + Opus 5.5 + Sonnet 5.5": 12,
+    "no subagents": 13,
+    "Opus 5.5 + Sonnet 5.5": 1,
+    "Opus 5.5": 4
+   },
+   "runs_with_no_subagents": 13,
+   "no_subagents": {
+    "runs": 13,
+    "recall": 0.29545454545454547,
+    "precision": 0.6842105263157895,
+    "cost_per_run": 0.27577847692307694
+   },
+   "with_subagents": {
+    "runs": 17,
+    "recall": 0.3225806451612903,
+    "precision": 0.46511627906976744,
+    "cost_per_run": 0.8457339108823528
+   }
+  },
+  "fable52": {
+   "plugin_runs": 30,
+   "patterns": {
+    "Haiku 5.5 + Opus 5.5 + Sonnet 5.5": 27,
+    "Opus 5.5": 2,
+    "Haiku 5.5 + Opus 5.5": 1
+   },
+   "runs_with_no_subagents": 0,
+   "no_subagents": {
+    "runs": 0,
+    "recall": null,
+    "precision": null,
+    "cost_per_run": null
+   },
+   "with_subagents": {
+    "runs": 29,
+    "recall": 0.3163265306122449,
+    "precision": 0.4305555555555556,
+    "cost_per_run": 1.7518022555172412
+   }
+  }
+ },
+ "safety": {
+  "refused_runs": [
+   "r2-fe-case-004-fable52-plugin"
+  ],
+  "fallback_runs": [],
+  "runs_with_leak_markers": [],
+  "runs_that_posted_to_pr": [],
+  "runs_with_dirty_checkout": [],
+  "judge_errors": 0,
+  "permission_denials_per_run": {
+   "opus55/plugin": 0.7666666666666667,
+   "opus55/baseline": 2.3,
+   "fable52/plugin": 2.7,
+   "fable52/baseline": 1.1
+  }
+ },
+ "spend": {
+  "review_cost_estimate": 118.650377515,
+  "judge_cost_estimate": 7.9897
+ }
+}

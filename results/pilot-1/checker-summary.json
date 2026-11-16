@@ -1,0 +1,39 @@
+{
+ "sample": {
+  "seed": 20261115,
+  "per_cell": 25,
+  "population": {
+   "fable52/baseline": 214,
+   "fable52/plugin": 41,
+   "opus55/baseline": 259,
+   "opus55/plugin": 29
+  },
+  "sampled": 100,
+  "checker_version": "1",
+  "model": "claude-sonnet-5-5"
+ },
+ "verdicts_by_cell": {
+  "fable52/baseline": {
+   "real": 10,
+   "cannot_tell": 10,
+   "not_real": 5
+  },
+  "fable52/plugin": {
+   "real": 15,
+   "not_real": 3,
+   "cannot_tell": 7
+  },
+  "opus55/baseline": {
+   "real": 14,
+   "not_real": 6,
+   "cannot_tell": 5
+  },
+  "opus55/plugin": {
+   "real": 16,
+   "not_real": 3,
+   "cannot_tell": 6
+  }
+ },
+ "hand_checked": 0,
+ "note": "Checker verdicts are a model opinion based on the diff only. No hand check has been done yet."
+}

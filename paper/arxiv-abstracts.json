@@ -1,0 +1,602 @@
+{
+ "2311.11123": {
+  "title": "(Why) Is My Prompt Getting Worse? Rethinking Regression Testing for Evolving LLM APIs",
+  "authors": [
+   "Wanqin Ma",
+   "Chenyang Yang",
+   "Christian K\u00e4stner"
+  ],
+  "published": "2023-11-18",
+  "abstract": "Large Language Models (LLMs) are increasingly integrated into software applications. Downstream application developers often access LLMs through APIs provided as a service. However, LLM APIs are often updated silently and scheduled to be deprecated, forcing users to continuously adapt to evolving models. This can cause performance regression and affect prompt design choices, as evidenced by our case study on toxicity detection. Based on our case study, we emphasize the need for and re-examine the concept of regression testing for evolving LLM APIs. We argue that regression testing LLMs requires fundamental changes to traditional testing approaches, due to different correctness notions, prompting brittleness, and non-determinism in LLM APIs.",
+  "journal_ref": null,
+  "comment": "conference version"
+ },
+ "2411.02093": {
+  "title": "Do Advanced Language Models Eliminate the Need for Prompt Engineering in Software Engineering?",
+  "authors": [
+   "Guoqing Wang",
+   "Zeyu Sun",
+   "Zhihao Gong",
+   "Sixiang Ye",
+   "Yizhou Chen",
+   "Yifan Zhao",
+   "Qingyuan Liang",
+   "Dan Hao"
+  ],
+  "published": "2024-11-04",
+  "abstract": "Large Language Models (LLMs) have significantly advanced software engineering (SE) tasks, with prompt engineering techniques enhancing their performance in code-related areas. However, the rapid development of foundational LLMs such as the non-reasoning model GPT-4o and the reasoning model o1 raises questions about the continued effectiveness of these prompt engineering techniques. This paper presents an extensive empirical study that reevaluates various prompt engineering techniques within the context of these advanced LLMs. Focusing on three representative SE tasks, i.e., code generation, code translation, and code summarization, we assess whether prompt engineering techniques still yield improvements with advanced models, the actual effectiveness of reasoning models compared to non-reasoning models, and whether the benefits of using these advanced models justify their increased costs. Our findings reveal that prompt engineering techniques developed for earlier LLMs may provide diminished benefits or even hinder performance when applied to advanced models. In reasoning LLMs, the ability of sophisticated built-in reasoning reduces the impact of complex prompts, sometimes making simple zero-shot prompting more effective. Furthermore, while reasoning models outperform non-reasoning models in tasks requiring complex reasoning, they offer minimal advantages in tasks that do not need reasoning and may incur unnecessary costs. Based on our study, we provide practical guidance for practitioners on selecting appropriate prompt engineering techniques and foundational LLMs, considering factors such as task requirements, operational costs, and environmental impact. Our work contributes to a deeper understanding of effectively harnessing advanced LLMs in SE tasks, informing future research and application development.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2407.01502": {
+  "title": "AI Agents That Matter",
+  "authors": [
+   "Sayash Kapoor",
+   "Benedikt Stroebl",
+   "Zachary S. Siegel",
+   "Nitya Nadgir",
+   "Arvind Narayanan"
+  ],
+  "published": "2024-07-01",
+  "abstract": "AI agents are an exciting new research direction, and agent development is driven by benchmarks. Our analysis of current agent benchmarks and evaluation practices reveals several shortcomings that hinder their usefulness in real-world applications. First, there is a narrow focus on accuracy without attention to other metrics. As a result, SOTA agents are needlessly complex and costly, and the community has reached mistaken conclusions about the sources of accuracy gains. Our focus on cost in addition to accuracy motivates the new goal of jointly optimizing the two metrics. We design and implement one such optimization, showing its potential to greatly reduce cost while maintaining accuracy. Second, the benchmarking needs of model and downstream developers have been conflated, making it hard to identify which agent would be best suited for a particular application. Third, many agent benchmarks have inadequate holdout sets, and sometimes none at all. This has led to agents that are fragile because they take shortcuts and overfit to the benchmark in various ways. We prescribe a principled framework for avoiding overfitting. Finally, there is a lack of standardization in evaluation practices, leading to a pervasive lack of reproducibility. We hope that the steps we introduce for addressing these shortcomings will spur the development of agents that are useful in the real world and not just accurate on benchmarks.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2512.08296": {
+  "title": "Towards a Science of Scaling Agent Systems",
+  "authors": [
+   "Yubin Kim",
+   "Ken Gu",
+   "Chanwoo Park",
+   "Chunjong Park",
+   "Samuel Schmidgall",
+   "A. Ali Heydari",
+   "Yao Yan",
+   "Zhihan Zhang",
+   "Yuchen Zhuang",
+   "Yun Liu",
+   "Mark Malhotra",
+   "Paul Pu Liang",
+   "Hae Won Park",
+   "Yuzhe Yang",
+   "Xuhai Xu",
+   "Yilun Du",
+   "Shwetak Patel",
+   "Tim Althoff",
+   "Daniel McDuff",
+   "Xin Liu"
+  ],
+  "published": "2025-12-09",
+  "abstract": "Agents, language model-based systems capable of reasoning, planning, and acting are widely adopted in real-world tasks, yet how their performance changes as these systems scale across key dimensions remains underexplored. We introduce quantitative scaling principles for agent systems as a predictive model, capturing how performance varies with coordination, model capability, and measurable system and task factors. Across 260 configurations spanning six agentic benchmarks, five canonical architectures (Single-Agent and four Multi-Agent: Independent, Centralized, Decentralized, Hybrid), and three LLM families, we perform controlled evaluations, standardizing tools, prompts, and compute to isolate architectural effects. The resulting model achieves a cross-validated R^2=0.373 across all six benchmarks (R^2=0.413 with a task-grounded capability metric). We identify a robust capability-saturation effect and additional patterns: (1) a coordination yields diminishing returns once single-agent baselines exceed certain performance; (2) tool-heavy tasks appear to incur multi-agent overhead; and (3) architectures without centralized verification tend to propagate errors more than those with centralized coordination. Relative performance change compared to single-agent baseline ranges from +80.8% on decomposable financial reasoning to -70.0% on sequential planning, demonstrating that architecture-task alignment determines collaborative success. The framework identifies the best-performing architecture for 87% of held-out configurations and shows consistent relative architecture preferences on unseen frontier models. Agent effectiveness depends on alignment between coordination and task structure, and that mismatched coordination degrades the performance.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2411.13323": {
+  "title": "Are Large Language Models Memorizing Bug Benchmarks?",
+  "authors": [
+   "Daniel Ramos",
+   "Claudia Mamede",
+   "Kush Jain",
+   "Paulo Canelas",
+   "Catarina Gamboa",
+   "Claire Le Goues"
+  ],
+  "published": "2024-11-20",
+  "abstract": "Large Language Models (LLMs) have become integral to various software engineering tasks, including code generation, bug detection, and repair. To evaluate model performance in these domains, numerous bug benchmarks containing real-world bugs from software projects have been developed. However, a growing concern within the software engineering community is that these benchmarks may not reliably reflect true LLM performance due to the risk of data leakage. Despite this concern, limited research has been conducted to quantify the impact of potential leakage. In this paper, we systematically evaluate popular LLMs to assess their susceptibility to data leakage from widely used bug benchmarks. To identify potential leakage, we use multiple metrics, including a study of benchmark membership within commonly used training datasets, as well as analyses of negative log-likelihood and n-gram accuracy. Our findings show that certain models, in particular codegen-multi, exhibit significant evidence of memorization in widely used benchmarks like Defects4J, while newer models trained on larger datasets like LLaMa 3.1 exhibit limited signs of leakage. These results highlight the need for careful benchmark selection and the adoption of robust metrics to adequately assess models capabilities.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2503.13657": {
+  "title": "Why Do Multi-Agent LLM Systems Fail?",
+  "authors": [
+   "Mert Cemri",
+   "Melissa Z. Pan",
+   "Shuyi Yang",
+   "Lakshya A. Agrawal",
+   "Bhavya Chopra",
+   "Rishabh Tiwari",
+   "Kurt Keutzer",
+   "Aditya Parameswaran",
+   "Dan Klein",
+   "Kannan Ramchandran",
+   "Matei Zaharia",
+   "Joseph E. Gonzalez",
+   "Ion Stoica"
+  ],
+  "published": "2025-03-17",
+  "abstract": "Despite enthusiasm for Multi-Agent LLM Systems (MAS), their performance gains on popular benchmarks are often minimal. This gap highlights a critical need for a principled understanding of why MAS fail. Addressing this question requires systematic identification and analysis of failure patterns. We introduce MAST-Data, a comprehensive dataset of 1600+ annotated traces collected across 7 popular MAS frameworks. MAST-Data is the first multi-agent system dataset to outline the failure dynamics in MAS for guiding the development of better future systems. To enable systematic classification of failures for MAST-Data, we build the first Multi-Agent System Failure Taxonomy (MAST). We develop MAST through rigorous analysis of 150 traces, guided closely by expert human annotators and validated by high inter-annotator agreement (kappa = 0.88). This process identifies 14 unique modes, clustered into 3 categories: (i) system design issues, (ii) inter-agent misalignment, and (iii) task verification. To enable scalable annotation, we develop an LLM-as-a-Judge pipeline with high agreement with human annotations. We leverage MAST and MAST-Data to analyze failure patterns across models (GPT4, Claude 3, Qwen2.5, CodeLlama) and tasks (coding, math, general agent), demonstrating improvement headrooms from better MAS design. Our analysis provides insights revealing that identified failures require more sophisticated solutions, highlighting a clear roadmap for future research. We publicly release our comprehensive dataset (MAST-Data), the MAST, and our LLM annotator to facilitate widespread research and development in MAS.",
+  "journal_ref": null,
+  "comment": "ArXiv v3"
+ },
+ "2310.11324": {
+  "title": "Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting",
+  "authors": [
+   "Melanie Sclar",
+   "Yejin Choi",
+   "Yulia Tsvetkov",
+   "Alane Suhr"
+  ],
+  "published": "2023-10-17",
+  "abstract": "As large language models (LLMs) are adopted as a fundamental component of language technologies, it is crucial to accurately characterize their performance. Because choices in prompt design can strongly influence model behavior, this design process is critical in effectively using any modern pre-trained generative language model. In this work, we focus on LLM sensitivity to a quintessential class of meaning-preserving design choices: prompt formatting. We find that several widely used open-source LLMs are extremely sensitive to subtle changes in prompt formatting in few-shot settings, with performance differences of up to 76 accuracy points when evaluated using LLaMA-2-13B. Sensitivity remains even when increasing model size, the number of few-shot examples, or performing instruction tuning. Our analysis suggests that work evaluating LLMs with prompting-based methods would benefit from reporting a range of performance across plausible prompt formats, instead of the currently-standard practice of reporting performance on a single format. We also show that format performance only weakly correlates between models, which puts into question the methodological validity of comparing models with an arbitrarily chosen, fixed prompt format. To facilitate systematic analysis we propose FormatSpread, an algorithm that rapidly evaluates a sampled set of plausible prompt formats for a given task, and reports the interval of expected performance without accessing model weights. Furthermore, we present a suite of analyses that characterize the nature of this sensitivity, including exploring the influence of particular atomic perturbations and the internal representation of particular formats.",
+  "journal_ref": null,
+  "comment": "ICLR 2024 Camera Ready version. With respect to the original submission, we added text generation experiments, plots of entire accuracy distributions for each task + stdev computations, and prompt length correlation with spread analysis"
+ },
+ "2506.07142": {
+  "title": "Prompting Science Report 2: The Decreasing Value of Chain of Thought in Prompting",
+  "authors": [
+   "Lennart Meincke",
+   "Ethan Mollick",
+   "Lilach Mollick",
+   "Dan Shapiro"
+  ],
+  "published": "2025-06-08",
+  "abstract": "This is the second in a series of short reports that seek to help business, education, and policy leaders understand the technical details of working with AI through rigorous testing. In this report, we investigate Chain-of-Thought (CoT) prompting, a technique that encourages a large language model (LLM) to \"think step by step\" (Wei et al., 2022). CoT is a widely adopted method for improving reasoning tasks, however, our findings reveal a more nuanced picture of its effectiveness. We demonstrate two things: - The effectiveness of Chain-of-Thought prompting can vary greatly depending on the type of task and model. For non-reasoning models, CoT generally improves average performance by a small amount, particularly if the model does not inherently engage in step-by-step processing by default. However, CoT can introduce more variability in answers, sometimes triggering occasional errors in questions the model would otherwise get right. We also found that many recent models perform some form of CoT reasoning even if not asked; for these models, a request to perform CoT had little impact. Performing CoT generally requires far more tokens (increasing cost and time) than direct answers. - For models designed with explicit reasoning capabilities, CoT prompting often results in only marginal, if any, gains in answer accuracy. However, it significantly increases the time and tokens needed to generate a response.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2605.23657": {
+  "title": "OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents",
+  "authors": [
+   "Jiahao Ying",
+   "Boxian Ai",
+   "Wei Tang",
+   "Siyuan Liu",
+   "Yixin Cao"
+  ],
+  "published": "2026-05-22",
+  "abstract": "Skills, i.e., structured workflow instructions distilled for large language models (LLMs), are becoming an increasingly important mechanism for improving agent performance on real-world downstream tasks. However, as the open-source skill ecosystem rapidly expands, it remains unclear how different models and agent frameworks interact with skills, how to evaluate skill quality, and how users should select skills under practical cost-performance trade-offs. In this paper, we present \\textsc{OpenSkillEval}, an automatic evaluation framework for both skill-augmented agent systems and the skills themselves. Instead of relying on static benchmarks, \\textsc{OpenSkillEval} automatically constructs realistic task instances from evolving real-world artifacts across five categories of downstream applications: presentation generation, front-end web design, poster generation, data visualization, and report generation. It further collects and organizes community-contributed skills for controlled comparison under unified task settings. Using more than 600 dynamically generated task instances and 30 open-source skills, we conduct a systematic evaluation of state-of-the-art models and agent frameworks. Our results show that skill availability does not guarantee effective skill usage, that the benefit of skill augmentation depends strongly on both the underlying model and the agent framework, and that many publicly popular skills do not consistently outperform base agents without skills. These findings highlight the need for dynamic, task-grounded evaluation and provide practical insights into the design, selection, and deployment of skills for LLM agents. Additional cases and benchmark resources are available on the project website: https://yingjiahao14.github.io/OpenSkillEval-Web/.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2609.00468": {
+  "title": "What Survives the Next Model? Benchmarking LLM-Based Techniques Against Single-Prompts",
+  "authors": [
+   "Nahian Salsabil",
+   "Joy Saha",
+   "Simantika Bhattacharjee Dristi",
+   "Nicholas Phair",
+   "Nusrat Jahan Mozumder",
+   "Matthew B. Dwyer",
+   "Sebastian Elbaum"
+  ],
+  "published": "2026-08-31",
+  "abstract": "The software engineering research community has enthusiastically embraced the integration of Large Language Models (LLMs) into complex techniques to solve a wide variety of tasks. However, the extent to which this investment is strategic remains unclear, as the native capabilities of successive frontier model generations can rapidly render existing techniques obsolete. To assess this research investment, we analyze 35 LLM-based technique papers from ICSE 2026. We evaluate whether their complex tools can be outperformed by the simplest possible alternative: a single, automatically generated prompt executed on a newer generation model, without any iterative refinement. We find that for between 37% and 63% papers, a newer model with a single prompt natively outperforms the heavily engineered tooling proposed just a year prior. We identify that constructive techniques like code generation or repair are more amenable to substitution by a single-prompt. We also identify a surviving set of papers relying on strategies that provide additional insights to the model where newer LLMs will amplify the proposed technique. Our findings raise questions about the cost-benefit proposition of techniques designed as workarounds to temporary model deficits and the need to focus on enduring challenges that scale synergistically with future model generations. Our source codes and results are made publicly available at https://github.com/less-lab-uva/What-Survives-the-Next-Model.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2602.11988": {
+  "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+  "authors": [
+   "Thibaud Gloaguen",
+   "Niels M\u00fcndler-Sasahara",
+   "Mark Niklas M\u00fcller",
+   "Veselin Raychev",
+   "Martin Vechev"
+  ],
+  "published": "2026-02-12",
+  "abstract": "A widespread practice in software development is to tailor coding agents to repositories using context files, such as AGENTS.md. Although this practice is strongly encouraged by agent developers, there is currently no rigorous investigation into whether such context files are actually effective for real-world tasks. In this work, we study this question and evaluate coding agents' task completion performance in two complementary settings: established SWE-bench tasks from popular repositories, with LLM-generated context files, and a novel collection of issues from repositories containing developer-committed context files. Surprisingly, we find that providing context files does not generally improve task success rates, while increasing inference cost by over 20% on average. This observation holds across different LLMs, coding agents, and for both LLM-generated and developer-committed context files. Specifically, we find that while instructions in the context files are well followed by coding agents, repository overviews, although popular and recommended by model providers, are not helpful. We conclude that while context files are useful for specifying non-standard coding practices, any attempts to improve performance should be rigorously evaluated before deployment.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2608.24641": {
+  "title": "Aging of Prompt Engineering Techniques Across LLM Versions",
+  "authors": [
+   "Anastasiia Rudyk",
+   "Julian Oertel",
+   "Regina Hebig"
+  ],
+  "published": "2026-08-25",
+  "abstract": "Prompt engineering and prompt engineering techniques (PETs) have become an integral part of software engineering for AI systems. However, new LLMs are released frequently and it remains unclear how the effectiveness of prompt engineering techniques changes across successive generations of Large Language Models (LLMs). To this end, we conduct a partial replication of the study by Khojah et al. (2025). We evaluate five techniques - Zero-Shot, Few-Shot, Chain-of-Thought (CoT), Contrastive Chain-of-Thought (CCoT), and an adapted version of Program-of-Thought (PoT) - on six instruction-tuned models grouped into three version pairs: GPT-3.5-Turbo/GPT-4o, Qwen2 7B Instruct/Qwen2.5 7B Instruct, and Mistral-7B-Instruct/Mistral-Large. We use a cleaned subset of the CodePromptEval dataset with 218 context-rich Python functions and 19,620 total generations assessed via pass@k-based functional correctness to evaluate model pairs on function-level code generation tasks. We show that prompt engineering \"ages\" in a model-family-specific way: Newer GPT models exhibit diminishing or even negative marginal gains from structured prompting, suggesting that instruction-following and reasoning scaffolds are increasingly internalized, whereas Qwen models continue to benefit substantially from Few-Shot and CCoT. Mistral models show mixed behavior with persistent gains from CCoT but attenuated benefits from CoT and PoT. Our results imply that effective prompting strategies must be adapted per model family and generation rather than transferred unchanged. This motivates future work on adaptive, model-aware prompting and broader, multi-dimensional code quality evaluation.",
+  "journal_ref": null,
+  "comment": "Accepted at ICSME 2026"
+ },
+ "2602.12670": {
+  "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+  "authors": [
+   "Xiangyi Li",
+   "Yimin Liu",
+   "Wenbo Chen",
+   "Bingran You",
+   "Zonglin Di",
+   "Yifeng He",
+   "Shenghan Zheng",
+   "Kyoung Whan Choe",
+   "Jiankai Sun",
+   "Shuyi Wang",
+   "Chujun Tao",
+   "Binxu Li",
+   "Xuandong Zhao",
+   "Hejia Geng",
+   "Xiaojun Wu",
+   "Junwei Zhou",
+   "Xiaokun Chen",
+   "Hanwen Xing",
+   "Yubo Li",
+   "Qunhong Zeng",
+   "Di Wang",
+   "Yuanli Wang",
+   "Roey Ben Chaim",
+   "Penghao Jiang",
+   "Haotian Shen",
+   "Luyang Kong",
+   "Xinyi Liu",
+   "Runhui Wang",
+   "Xuanqing Liu",
+   "Jiachen Li",
+   "Xin Lan",
+   "Yueqian Lin",
+   "Wengao Ye",
+   "Junwei He",
+   "Songlin Li",
+   "Yue Zhang",
+   "Yipeng Gao",
+   "Yijiang Li",
+   "Ze Ma",
+   "Liqiang Jing",
+   "Tianyu Wang",
+   "Kaixin Li",
+   "Yiqi Xue",
+   "Haoran Lyu",
+   "Yizhuo He",
+   "Yuchen Tian",
+   "Shutong Wu",
+   "Bowei Wang",
+   "Yixuan Gao",
+   "Bo Chen",
+   "Litong Liu",
+   "Sikai Cheng",
+   "Jiajun Bao",
+   "Shuaicheng Tong",
+   "Shuwen Xu",
+   "Terry Yue Zhuo",
+   "Tinghan Ye",
+   "Qi Qi",
+   "Miao Li",
+   "Longtai Liao",
+   "Zelin Tan",
+   "Chang Shi",
+   "Xilin Tang",
+   "Srinath Tankasala",
+   "Boqin Yuan",
+   "Yaoyao Qian",
+   "Jianhong Tu",
+   "Chenguang Wang",
+   "Yizhou Sun",
+   "Wei Wang",
+   "Aaron Taylor",
+   "Ziyue Yang",
+   "Changkun Guan",
+   "Zhikang Dong",
+   "Xinyu Zhang",
+   "Steven Dillmann",
+   "Han-chung Lee",
+   "Dawn Song"
+  ],
+  "published": "2026-02-13",
+  "abstract": "Agent Skills are structured packages of procedural knowledge that augment large language model (LLM) agents at inference time. Despite rapid adoption, there is no standard way to measure whether they actually help. We present SkillsBench, a benchmark whose current inventory contains 87 tasks across 8 domains paired with curated Skills and deterministic verifiers. Our latest aggregate evaluation runs the 87-task benchmark under matched no-Skills and curated-Skills conditions for 18 model-harness configurations. Curated Skills raise the average pass rate from 33.9% to 50.5% (+16.6 percentage points; 25.5% normalized gain), with configuration-level gains ranging from +4.1 to +25.7 pp. Focused Skills with at most three modules outperform larger or exhaustive bundles, and smaller models with Skills can match larger models without them. SkillsBench establishes paired evaluation as the foundation for rigorous measurement of Skill efficacy on agentic, expertise-heavy work.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2306.05685": {
+  "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+  "authors": [
+   "Lianmin Zheng",
+   "Wei-Lin Chiang",
+   "Ying Sheng",
+   "Siyuan Zhuang",
+   "Zhanghao Wu",
+   "Yonghao Zhuang",
+   "Zi Lin",
+   "Zhuohan Li",
+   "Dacheng Li",
+   "Eric P. Xing",
+   "Hao Zhang",
+   "Joseph E. Gonzalez",
+   "Ion Stoica"
+  ],
+  "published": "2023-06-09",
+  "abstract": "Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences. To address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions. We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them. We then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-bench, a multi-turn question set; and Chatbot Arena, a crowdsourced battle platform. Our results reveal that strong LLM judges like GPT-4 can match both controlled and crowdsourced human preferences well, achieving over 80% agreement, the same level of agreement between humans. Hence, LLM-as-a-judge is a scalable and explainable way to approximate human preferences, which are otherwise very expensive to obtain. Additionally, we show our benchmark and traditional benchmarks complement each other by evaluating several variants of LLaMA and Vicuna. The MT-bench questions, 3K expert votes, and 30K conversations with human preferences are publicly available at https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge.",
+  "journal_ref": null,
+  "comment": "NeurIPS 2023 Datasets and Benchmarks Track"
+ },
+ "2508.06709": {
+  "title": "Play Favorites: A Statistical Method to Measure Self-Bias in LLM-as-a-Judge",
+  "authors": [
+   "Evangelia Spiliopoulou",
+   "Riccardo Fogliato",
+   "Hanna Burnsky",
+   "Tamer Soliman",
+   "Jie Ma",
+   "Graham Horwood",
+   "Miguel Ballesteros"
+  ],
+  "published": "2025-08-08",
+  "abstract": "Large language models (LLMs) can serve as judges that offer rapid and reliable assessments of other LLM outputs. However, models may systematically assign overly favorable ratings to their own outputs, a phenomenon known as self-bias, which can distort evaluations of true model performance. Previous studies often conflate genuine differences in model quality with bias or incorrectly assume that evaluations from LLMs and humans follow the same rating distributions. In this work, we present a statistical framework that explicitly formalizes assumptions under which self-bias can be identified and estimated. Our method models the difference in the scoring distribution that LLM-as-a-judge assigns to its own completions compared to other models, while accounting for the underlying quality of the completions provided by an independent, third-party judge (e.g., humans). Our method reliably isolates and quantifies self-bias, even when models vary in ability, ensuring that genuine performance differences are not mistaken for self-bias. We conduct an empirical analysis of self-bias on a large dataset (>5000 prompt-completion pairs) consisting of expert human annotations and judgments from nine different LLM judges. We find that some models, such as GPT-4o and Claude 3.5 Sonnet, systematically assign higher scores to their own outputs. These models also display family-bias; systematically assigning higher ratings to outputs produced by other models of the same family. Our findings highlight potential pitfalls of using LLM judges and offer practical guidance to mitigate biases when interpreting automated evaluations.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2307.09009": {
+  "title": "How is ChatGPT's behavior changing over time?",
+  "authors": [
+   "Lingjiao Chen",
+   "Matei Zaharia",
+   "James Zou"
+  ],
+  "published": "2023-07-18",
+  "abstract": "GPT-3.5 and GPT-4 are the two most widely used large language model (LLM) services. However, when and how these models are updated over time is opaque. Here, we evaluate the March 2023 and June 2023 versions of GPT-3.5 and GPT-4 on several diverse tasks: 1) math problems, 2) sensitive/dangerous questions, 3) opinion surveys, 4) multi-hop knowledge-intensive questions, 5) generating code, 6) US Medical License tests, and 7) visual reasoning. We find that the performance and behavior of both GPT-3.5 and GPT-4 can vary greatly over time. For example, GPT-4 (March 2023) was reasonable at identifying prime vs. composite numbers (84% accuracy) but GPT-4 (June 2023) was poor on these same questions (51% accuracy). This is partly explained by a drop in GPT-4's amenity to follow chain-of-thought prompting. Interestingly, GPT-3.5 was much better in June than in March in this task. GPT-4 became less willing to answer sensitive questions and opinion survey questions in June than in March. GPT-4 performed better at multi-hop questions in June than in March, while GPT-3.5's performance dropped on this task. Both GPT-4 and GPT-3.5 had more formatting mistakes in code generation in June than in March. We provide evidence that GPT-4's ability to follow user instructions has decreased over time, which is one common factor behind the many behavior drifts. Overall, our findings show that the behavior of the \"same\" LLM service can change substantially in a relatively short amount of time, highlighting the need for continuous monitoring of LLMs.",
+  "journal_ref": null,
+  "comment": "add more evaluations on instruction following"
+ },
+ "2404.13076": {
+  "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+  "authors": [
+   "Arjun Panickssery",
+   "Samuel R. Bowman",
+   "Shi Feng"
+  ],
+  "published": "2024-04-15",
+  "abstract": "Self-evaluation using large language models (LLMs) has proven valuable not only in benchmarking but also methods like reward modeling, constitutional AI, and self-refinement. But new biases are introduced due to the same LLM acting as both the evaluator and the evaluatee. One such bias is self-preference, where an LLM evaluator scores its own outputs higher than others' while human annotators consider them of equal quality. But do LLMs actually recognize their own outputs when they give those texts higher scores, or is it just a coincidence? In this paper, we investigate if self-recognition capability contributes to self-preference. We discover that, out of the box, LLMs such as GPT-4 and Llama 2 have non-trivial accuracy at distinguishing themselves from other LLMs and humans. By fine-tuning LLMs, we discover a linear correlation between self-recognition capability and the strength of self-preference bias; using controlled experiments, we show that the causal explanation resists straightforward confounders. We discuss how self-recognition can interfere with unbiased evaluations and AI safety more generally.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2604.02460": {
+  "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+  "authors": [
+   "Dat Tran",
+   "Douwe Kiela"
+  ],
+  "published": "2026-04-02",
+  "abstract": "Recent work reports strong performance from multi-agent LLM systems (MAS), but these gains are often confounded by increased test-time computation. When computation is normalized, single-agent systems (SAS) can match or outperform MAS, yet the theoretical basis and evaluation methodology behind this comparison remain unclear. We present an information-theoretic argument, grounded in the Data Processing Inequality, suggesting that under a fixed reasoning-token budget and with perfect context utilization, single-agent systems are more information-efficient. This perspective further predicts that multi-agent systems become competitive when a single agent's effective context utilization is degraded, or when more compute is expended. We test these predictions in a controlled empirical study across three model families (Qwen3, DeepSeek-R1-Distill-Llama, and Gemini 2.5), comparing SAS with multiple MAS architectures under matched budgets. We find that SAS consistently match or outperform MAS on multi-hop reasoning tasks when reasoning tokens are held constant. Beyond aggregate performance, we conduct a detailed diagnostic analysis of system behavior and evaluation methodology. We identify significant artifacts in API-based budget control (particularly in Gemini 2.5) and in standard benchmarks, both of which can inflate apparent gains from MAS. Overall, our results suggest that, for multi-hop reasoning tasks, many reported advantages of multi-agent systems are better explained by unaccounted computation and context effects rather than inherent architectural benefits, and highlight the importance of understanding and explicitly controlling the trade-offs between compute, context, and coordination in agentic systems.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2605.26731": {
+  "title": "It's Not the Capability: Harness Sensitivity Is Non-Monotone Across LLM Agent Tiers",
+  "authors": [
+   "Yong-eun Cho"
+  ],
+  "published": "2026-05-26",
+  "abstract": "A prevalent assumption in LLM agent deployment holds that more structured harnesses universally improve reliability, and that higher-capability models need proportionally less structural guidance -- together implying a monotone inverse relationship between model capability tier and optimal harness complexity. We test this hypothesis through a controlled 432-run experiment crossing six models across four capability tiers with three harness conditions (light, balanced, strict) on HEAT-24, a 24-task synthetic benchmark with git-based workspace verification. Our results refute the monotone inverse relationship on two fronts. First, for the frontier chat model evaluated (Gemini 2.5 Flash), increased harness verbosity lowers VTSR by 29-38 percentage points -- a harness-complexity paradox. Second, for the frontier reasoning model evaluated (Qwen3.5-122B, extended thinking enabled), strict harness achieves the highest VTSR (91.7%) and the lowest latency, the opposite of the prediction. Within the constrained tier, a 2B model (Gemma4:e2B) matches strong-open-tier stability at 91.7% across all harnesses. Because each tier is represented by a single model in this study, these results should be interpreted as model-specific observations; harness sensitivity appears non-monotone across the models evaluated, and depends critically on model type (chat vs. reasoning). We introduce a six-label failure taxonomy showing that format_violation dominates capable-model failures while wrong_file dominates low-capability failures, and we derive practical tier-aware harness selection guidelines.",
+  "journal_ref": null,
+  "comment": "9 pages, 3 figures"
+ },
+ "2603.15401": {
+  "title": "SWE-Skills-Bench: Do Agent Skills Actually Help in Real-World Software Engineering?",
+  "authors": [
+   "Tingxu Han",
+   "Yi Zhang",
+   "Wei Song",
+   "Chunrong Fang",
+   "Zhenyu Chen",
+   "Youcheng Sun",
+   "Lijie Hu"
+  ],
+  "published": "2026-03-16",
+  "abstract": "Agent skills, structured procedural knowledge packages injected at inference time, are increasingly used to augment LLM agents on software engineering tasks. However, their real utility in end-to-end development settings remains unclear, and no standard procedure tests an individual skill before installation. We present swe-skills-bench, a skill-centric, requirement-driven benchmark that measures how much individual agent skills improve performance on real-world software engineering (SWE) tasks. We start from 98 public SWE skills, each paired with a real GitHub repository pinned at a fixed commit. For each skill, we derive repository-specific requirements, create executable verifiers, and build a reproducible environment. Under each of four agent-model configurations, we run every task once without the skill and once with it, yielding 3,920 paired evaluations. For each requirement, we compute a paired delta, i.e., the change in outcome when the skill is added. We then aggregate these deltas across a skill's ten requirements into a per-skill utility profile, and use a statistical test to classify each skill as Golden (significantly helpful), Ineffective (no significant effect), or Harmful (significantly detrimental). Our results show that skills provide limited benefits: 92 of 98 skills have no statistically significant effect, and adding skills raises the average pass ratio only from 76.6% to 76.9%. The few helpful skills supply procedures that the agent would otherwise omit (gains of up to $+17.7$ points). In contrast, harmful skills anchor the agent on their own templates and override the task's explicit instructions (losses of up to -17.0 points). Our code is available at https://github.com/ControllableModel/SWE-Skills-Bench.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2203.09095": {
+  "title": "Automating Code Review Activities by Large-Scale Pre-training",
+  "authors": [
+   "Zhiyu Li",
+   "Shuai Lu",
+   "Daya Guo",
+   "Nan Duan",
+   "Shailesh Jannu",
+   "Grant Jenks",
+   "Deep Majumder",
+   "Jared Green",
+   "Alexey Svyatkovskiy",
+   "Shengyu Fu",
+   "Neel Sundaresan"
+  ],
+  "published": "2022-03-17",
+  "abstract": "Code review is an essential part to software development lifecycle since it aims at guaranteeing the quality of codes. Modern code review activities necessitate developers viewing, understanding and even running the programs to assess logic, functionality, latency, style and other factors. It turns out that developers have to spend far too much time reviewing the code of their peers. Accordingly, it is in significant demand to automate the code review process. In this research, we focus on utilizing pre-training techniques for the tasks in the code review scenario. We collect a large-scale dataset of real-world code changes and code reviews from open-source projects in nine of the most popular programming languages. To better understand code diffs and reviews, we propose CodeReviewer, a pre-trained model that utilizes four pre-training tasks tailored specifically for the code review scenario. To evaluate our model, we focus on three key tasks related to code review activities, including code change quality estimation, review comment generation and code refinement. Furthermore, we establish a high-quality benchmark dataset based on our collected data for these three tasks and conduct comprehensive experiments on it. The experimental results demonstrate that our model outperforms the previous state-of-the-art pre-training approaches in all tasks. Further analysis show that our proposed pre-training tasks and the multilingual pre-training dataset benefit the model on the understanding of code changes and reviews.",
+  "journal_ref": null,
+  "comment": "ESEC/FSE 2022, camera-ready version"
+ },
+ "2602.07150": {
+  "title": "On Randomness in Agentic Evals",
+  "authors": [
+   "Bjarni Haukur Bjarnason",
+   "Andr\u00e9 Silva",
+   "Martin Monperrus"
+  ],
+  "published": "2026-02-06",
+  "abstract": "Agentic systems are evaluated on benchmarks where agents interact with environments to solve tasks. Most papers report a pass@1 score computed from a single run per task, assuming this gives a reliable performance estimate. We test this assumption by collecting 60,000 agentic trajectories on SWE-Bench-Verified, spanning three models and two scaffolds. We find substantial variance: single-run pass@1 estimates vary by 2.2 to 6.0 percentage points depending on which run is selected, with standard deviations exceeding 1.5 percentage points even at temperature 0. This variance has critical implications: reported improvements of 2--3 percentage points may reflect evaluation noise rather than genuine algorithmic progress. Through token-level analysis, we show that trajectories diverge early, often within the first few percent of tokens, and that these small differences cascade into different solution strategies. To enable reliable evaluation of agentic systems, we recommend three concrete practices: (1) estimate pass@1 from multiple independent runs per task, especially when measuring small improvements, (2) use statistical power analysis to determine the number of runs needed to detect expected effect sizes, and (3) consider metrics like pass@k (optimistic bound) and pass^k (pessimistic bound) with k>1 to better characterize the full performance envelope. While these practices increase evaluation cost, they are essential for distinguishing genuine scientific progress from statistical noise.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2504.04715": {
+  "title": "Are You Getting What You Pay For? Auditing Model Substitution in LLM APIs",
+  "authors": [
+   "Will Cai",
+   "Tianneng Shi",
+   "Xuandong Zhao",
+   "Dawn Song"
+  ],
+  "published": "2025-04-07",
+  "abstract": "Commercial Large Language Model (LLM) APIs create a fundamental trust problem: users pay for specific models but have no guarantee that providers deliver them faithfully. Providers may covertly substitute cheaper alternatives (e.g., quantized versions, smaller models) to reduce costs while maintaining advertised pricing. We formalize this model substitution problem and systematically evaluate detection methods under realistic adversarial conditions. Our empirical analysis reveals that software-only methods are fundamentally unreliable: statistical tests on text outputs are query-intensive and fail against subtle substitutions, while methods using log probabilities are defeated by inherent inference nondeterminism in production environments. We argue that this verification gap can be more effectively closed with hardware-level security. We propose and evaluate the use of Trusted Execution Environments (TEEs) as one practical and robust solution. Our findings demonstrate that TEEs can provide provable cryptographic guarantees of model integrity with only a modest performance overhead, offering a clear and actionable path to ensure users get what they pay for. Code is available at https://github.com/sunblaze-ucb/llm-api-audit",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2505.20411": {
+  "title": "SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents",
+  "authors": [
+   "Ibragim Badertdinov",
+   "Alexander Golubev",
+   "Maksim Nekrashevich",
+   "Anton Shevtsov",
+   "Simon Karasik",
+   "Andrei Andriushchenko",
+   "Maria Trofimova",
+   "Daria Litvintseva",
+   "Boris Yangel"
+  ],
+  "published": "2025-05-26",
+  "abstract": "LLM-based agents have shown promising capabilities in a growing range of software engineering (SWE) tasks. However, advancing this field faces two critical challenges. First, high-quality training data is scarce, especially data that reflects real-world SWE scenarios, where agents must interact with development environments, execute code and adapt behavior based on the outcomes of their actions. Existing datasets are either limited to one-shot code generation or comprise small, manually curated collections of interactive tasks, lacking both scale and diversity. Second, the lack of fresh interactive SWE tasks affects evaluation of rapidly improving models, as static benchmarks quickly become outdated due to contamination issues. To address these limitations, we introduce a novel, automated, and scalable pipeline to continuously extract real-world interactive SWE tasks from diverse GitHub repositories. Using this pipeline, we construct SWE-rebench, a public dataset comprising over 21,000 interactive Python-based SWE tasks, suitable for reinforcement learning of SWE agents at scale. Additionally, we use continuous supply of fresh tasks collected using SWE-rebench methodology to build a contamination-free benchmark for agentic software engineering. We compare results of various LLMs on this benchmark to results on SWE-bench Verified and show that performance of some language models might be inflated due to contamination issues.",
+  "journal_ref": null,
+  "comment": "Dataset: https://huggingface.co/datasets/nebius/SWE-rebench, SWE-rebench leaderboard https://swe-rebench.com NeurIPS 2025"
+ },
+ "2410.20247": {
+  "title": "Model Equality Testing: Which Model Is This API Serving?",
+  "authors": [
+   "Irena Gao",
+   "Percy Liang",
+   "Carlos Guestrin"
+  ],
+  "published": "2024-10-26",
+  "abstract": "Users often interact with large language models through black-box inference APIs, both for closed- and open-weight models (e.g., Llama models are popularly accessed via Amazon Bedrock and Azure AI Studio). In order to cut costs or add functionality, API providers may quantize, watermark, or finetune the underlying model, changing the output distribution -- possibly without notifying users. We formalize detecting such distortions as Model Equality Testing, a two-sample testing problem, where the user collects samples from the API and a reference distribution and conducts a statistical test to see if the two distributions are the same. We find that tests based on the Maximum Mean Discrepancy between distributions are powerful for this task: a test built on a simple string kernel achieves a median of 77.4% power against a range of distortions, using an average of just 10 samples per prompt. We then apply this test to commercial inference APIs from Summer 2024 for four Llama models, finding that 11 out of 31 endpoints serve different distributions than reference weights released by Meta.",
+  "journal_ref": null,
+  "comment": "ICLR 2025 Camera-Ready"
+ },
+ "2601.19494": {
+  "title": "AACR-Bench: Evaluating Automatic Code Review with Holistic Repository-Level Context",
+  "authors": [
+   "Lei Zhang",
+   "Yongda Yu",
+   "Minghui Yu",
+   "Xinxin Guo",
+   "Zhengqi Zhuang",
+   "Guoping Rong",
+   "Dong Shao",
+   "Haifeng Shen",
+   "Hongyu Kuang",
+   "Zhengfeng Li",
+   "Boge Wang",
+   "Guoan Zhang",
+   "Bangyu Xiang",
+   "Xiaobin Xu"
+  ],
+  "published": "2026-01-27",
+  "abstract": "High-quality evaluation benchmarks are pivotal for deploying Large Language Models (LLMs) in Automated Code Review (ACR). However, existing benchmarks suffer from two critical limitations: first, the lack of multi-language support in repository-level contexts, which restricts the generalizability of evaluation results; second, the reliance on noisy, incomplete ground truth derived from raw Pull Request (PR) comments, which constrains the scope of issue detection. To address these challenges, we introduce AACR-Bench a comprehensive benchmark that provides full cross-file context across multiple programming languages. Unlike traditional datasets, AACR-Bench employs an \"AI-assisted, Expert-verified\" annotation pipeline to uncover latent defects often overlooked in original PRs, resulting in a 285% increase in defect coverage. Extensive evaluations of mainstream LLMs on AACR-Bench reveal that previous assessments may have either misjudged or only partially captured model capabilities due to data limitations. Our work establishes a more rigorous standard for ACR evaluation and offers new insights on LLM based ACR, i.e., the granularity/level of context and the choice of retrieval methods significantly impact ACR performance, and this influence varies depending on the LLM, programming language, and the LLM usage paradigm e.g., whether an Agent architecture is employed. The code, data, and other artifacts of our evaluation set are available at https://github.com/alibaba/aacr-bench .",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2603.11078": {
+  "title": "CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents",
+  "authors": [
+   "Kristen Pereira",
+   "Neelabh Sinha",
+   "Rajat Ghosh",
+   "Debojyoti Dutta"
+  ],
+  "published": "2026-03-10",
+  "abstract": "Recent advances in frontier large language models have enabled code review agents that operate in open-ended, reasoning-intensive settings. However, the lack of standardized benchmarks and granular evaluation protocols makes it difficult to assess behavior of code review agents beyond coarse success metrics, particularly for tasks where false positives are costly. To address this gap, we introduce CR-Bench, a benchmarking dataset, and CR-Evaluator, a fine-grained evaluation pipeline for code review agents. Using these tools, we conduct a preliminary study evaluating both a single-shot agent and a Reflexion-based agent across two frontier models. We find that code review agents can exhibit a low signal-to-noise ratio when designed to identify all hidden issues, obscuring true progress and developer productivity when measured solely by resolution rates. Our analysis identifies the hidden trade-off between issue resolution and spurious findings, revealing a frontier that constrains effective agent design. Together, CR-Bench and CR-Evaluator provide a timely foundation for studying and developing code review agents as LLM-based systems transition from controlled benchmarks to real-world software engineering workflows.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2506.12286": {
+  "title": "The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason",
+  "authors": [
+   "Shanchao Liang",
+   "Spandan Garg",
+   "Roshanak Zilouchian Moghaddam"
+  ],
+  "published": "2025-06-14",
+  "abstract": "As large language models (LLMs) become increasingly capable and widely adopted, benchmarks play a central role in assessing their practical utility. For example, SWE-Bench Verified has emerged as a critical benchmark for evaluating LLMs' software engineering abilities, particularly their aptitude for resolving real-world GitHub issues. Recent LLMs show impressive performance on SWE-Bench, leading to optimism about their capacity for complex coding tasks. However, current evaluation protocols may overstate these models' true capabilities. It is crucial to distinguish LLMs' generalizable problem-solving ability and other learned artifacts. In this work, we introduce two diagnostic tasks: file path identification from issue descriptions alone and ground truth function reproduction with only the current file context and issue description to probe models' underlying knowledge. We present empirical evidence that performance gains on SWE-Bench-Verified may be partially driven by memorization rather than genuine problem-solving. We show that state-of-the-art models achieve up to 76% accuracy in identifying buggy file paths using only issue descriptions, without access to repository structure. This performance is merely up to 53% on tasks from repositories not included in SWE-Bench, pointing to possible data contamination or memorization. Similar patterns are also observed for the function reproduction task, where the verbatim similarity is much higher on SWE-Bench Verified than on other similar coding benchmarks (up to 35% consecutive 5-gram accuracy on SWE-Bench Verified and Full, but only up to 18% for tasks in other benchmarks). These findings raise concerns about the validity of existing results and underscore the need for more robust, contamination-resistant benchmarks to reliably evaluate LLMs' coding abilities.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2603.23448": {
+  "title": "Code Review Agent Benchmark",
+  "authors": [
+   "Yuntong Zhang",
+   "Zhiyuan Pan",
+   "Imam Nur Bani Yusuf",
+   "Haifeng Ruan",
+   "Ridwan Shariffdeen",
+   "Abhik Roychoudhury"
+  ],
+  "published": "2026-03-24",
+  "abstract": "Software engineering agents have shown significant promise in writing code. As AI agents permeate code writing, and generate huge volumes of code automatically -- the matter of code quality comes front and centre. As the automatically generated code gets integrated into huge code-bases -- the issue of code review and broadly quality assurance becomes important. In this paper, we take a fresh look at the problem and curate a code review dataset for AI agents to work with. Our dataset called c-CRAB (pronounced see-crab) can evaluate agents for code review tasks. Specifically given a pull-request (which could be coming from code generation agents or humans), if a code review agent produces a review, our evaluation framework can asses the reviewing capability of the code review agents. Our evaluation framework is used to evaluate the state of the art today -- the open-source PR-agent, as well as commercial code review agents from Devin, Claude Code, and Codex. Our c-CRAB dataset is systematically constructed from human reviews -- given a human review of a pull request instance we generate corresponding tests to evaluate the code review agent generated reviews. Such a benchmark construction gives us several insights. Firstly, the existing review agents taken together can solve only around 40% of the c-CRAB tasks, indicating the potential to close this gap by future research. Secondly, we observe that the agent reviews often consider different aspects from the human reviews -- indicating the potential for human-agent collaboration for code review that could be deployed in future software teams. Last but not the least, the agent generated tests from our data-set act as a held out test-suite and hence quality gate for agent generated reviews. What this will mean for future collaboration of code generation agents, test generation agents and code review agents -- remains to be investigated.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2411.00640": {
+  "title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+  "authors": [
+   "Evan Miller"
+  ],
+  "published": "2024-11-01",
+  "abstract": "Evaluations are critical for understanding the capabilities of large language models (LLMs). Fundamentally, evaluations are experiments; but the literature on evaluations has largely ignored the literature from other sciences on experiment analysis and planning. This article shows researchers with some training in statistics how to think about and analyze data from language model evaluations. Conceptualizing evaluation questions as having been drawn from an unseen super-population, we present formulas for analyzing evaluation data, measuring differences between two models, and planning an evaluation experiment. We make a number of specific recommendations for running language model evaluations and reporting experiment results in a way that minimizes statistical noise and maximizes informativeness.",
+  "journal_ref": null,
+  "comment": "14 pages"
+ },
+ "2405.20947": {
+  "title": "OR-Bench: An Over-Refusal Benchmark for Large Language Models",
+  "authors": [
+   "Justin Cui",
+   "Wei-Lin Chiang",
+   "Ion Stoica",
+   "Cho-Jui Hsieh"
+  ],
+  "published": "2024-05-31",
+  "abstract": "Large Language Models (LLMs) require careful safety alignment to prevent malicious outputs. While significant research focuses on mitigating harmful content generation, the enhanced safety often come with the side effect of over-refusal, where LLMs may reject innocuous prompts and become less helpful. Although the issue of over-refusal has been empirically observed, a systematic measurement is challenging due to the difficulty of crafting prompts that can elicit the over-refusal behaviors of LLMs. This study proposes a novel method for automatically generating large-scale over-refusal datasets. Leveraging this technique, we introduce OR-Bench, the first large-scale over-refusal benchmark. OR-Bench comprises 80,000 over-refusal prompts across 10 common rejection categories, a subset of around 1,000 hard prompts that are challenging even for state-of-the-art LLMs, and an additional 600 toxic prompts to prevent indiscriminate responses. We then conduct a comprehensive study to measure the over-refusal of 32 popular LLMs across 8 model families. Our datasets are publicly available at https://huggingface.co/bench-llms and our codebase is open-sourced at https://github.com/justincui03/or-bench. We hope this benchmark can help the community develop better safety aligned models.",
+  "journal_ref": null,
+  "comment": "Accepted to ICML 2025, we thank everyone for their valuable suggestions and feedback!"
+ },
+ "2509.01494": {
+  "title": "SWR-Bench: Assessing LLM Performance in Real-World Code Review Comment Generation",
+  "authors": [
+   "Zhengran Zeng",
+   "Ruikai Shi",
+   "Keke Han",
+   "Yixin Li",
+   "Kaicheng Sun",
+   "Yidong Wang",
+   "Zhuohao Yu",
+   "Rui Xie",
+   "Wei Ye",
+   "Shikun Zhang"
+  ],
+  "published": "2025-09-01",
+  "abstract": "Automated Code Review (ACR) is crucial for software quality, yet existing benchmarks often fail to reflect real-world complexities, hindering the evaluation of modern Large Language Models (LLMs). Current benchmarks frequently focus on fine-grained code units, lack complete project context, and use inadequate evaluation metrics. To address these limitations, we introduce SWRBench , a new benchmark comprising 1000 manually verified Pull Requests (PRs) from GitHub, offering PR-centric review with full project context. SWRBench employs an objective LLM-based evaluation method that aligns strongly with human judgment (~90 agreement) by verifying if issues from a structured ground truth are covered in generated reviews. Our systematic evaluation of mainstream ACR tools and LLMs on SWRBench reveals that current systems underperform, and ACR tools are more adept at detecting functional errors. Subsequently, we propose and validate a simple multi-review aggregation strategy that significantly boosts ACR performance, increasing F1 scores by up to 43.67%. Our contributions include the SWRBench benchmark, its objective evaluation method, a comprehensive study of current ACR capabilities, and an effective enhancement approach, offering valuable insights for advancing ACR research.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2404.13161": {
+  "title": "CyberSecEval 2: A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models",
+  "authors": [
+   "Manish Bhatt",
+   "Sahana Chennabasappa",
+   "Yue Li",
+   "Cyrus Nikolaidis",
+   "Daniel Song",
+   "Shengye Wan",
+   "Faizan Ahmad",
+   "Cornelius Aschermann",
+   "Yaohui Chen",
+   "Dhaval Kapil",
+   "David Molnar",
+   "Spencer Whitman",
+   "Joshua Saxe"
+  ],
+  "published": "2024-04-19",
+  "abstract": "Large language models (LLMs) introduce new security risks, but there are few comprehensive evaluation suites to measure and reduce these risks. We present BenchmarkName, a novel benchmark to quantify LLM security risks and capabilities. We introduce two new areas for testing: prompt injection and code interpreter abuse. We evaluated multiple state-of-the-art (SOTA) LLMs, including GPT-4, Mistral, Meta Llama 3 70B-Instruct, and Code Llama. Our results show that conditioning away risk of attack remains an unsolved problem; for example, all tested models showed between 26% and 41% successful prompt injection tests. We further introduce the safety-utility tradeoff: conditioning an LLM to reject unsafe prompts can cause the LLM to falsely reject answering benign prompts, which lowers utility. We propose quantifying this tradeoff using False Refusal Rate (FRR). As an illustration, we introduce a novel test set to quantify FRR for cyberattack helpfulness risk. We find many LLMs able to successfully comply with \"borderline\" benign requests while still rejecting most unsafe requests. Finally, we quantify the utility of LLMs for automating a core cybersecurity task, that of exploiting software vulnerabilities. This is important because the offensive capabilities of LLMs are of intense interest; we quantify this by creating novel test sets for four representative problems. We find that models with coding capabilities perform better than those without, but that further work is needed for LLMs to become proficient at exploit generation. Our code is open source and can be used to evaluate other LLMs.",
+  "journal_ref": null,
+  "comment": null
+ },
+ "2501.15134": {
+  "title": "BitsAI-CR: Automated Code Review via LLM in Practice",
+  "authors": [
+   "Tao Sun",
+   "Jian Xu",
+   "Yuanpeng Li",
+   "Zhao Yan",
+   "Ge Zhang",
+   "Lintao Xie",
+   "Lu Geng",
+   "Zheng Wang",
+   "Yueyan Chen",
+   "Qin Lin",
+   "Wenbo Duan",
+   "Kaixin Sui"
+  ],
+  "published": "2025-01-25",
+  "abstract": "Code review remains a critical yet resource-intensive process in software development, particularly challenging in large-scale industrial environments. While Large Language Models (LLMs) show promise for automating code review, existing solutions face significant limitations in precision and practicality. This paper presents BitsAI-CR, an innovative framework that enhances code review through a two-stage approach combining RuleChecker for initial issue detection and ReviewFilter for precision verification. The system is built upon a comprehensive taxonomy of review rules and implements a data flywheel mechanism that enables continuous performance improvement through structured feedback and evaluation metrics. Our approach introduces an Outdated Rate metric that can reflect developers' actual adoption of review comments, enabling automated evaluation and systematic optimization at scale. Empirical evaluation demonstrates BitsAI-CR's effectiveness, achieving 75.0% precision in review comment generation. For the Go language which has predominant usage at ByteDance, we maintain an Outdated Rate of 26.7%. The system has been successfully deployed at ByteDance, serving over 12,000 Weekly Active Users (WAU). Our work provides valuable insights into the practical application of automated code review and offers a blueprint for organizations seeking to implement automated code reviews at scale.",
+  "journal_ref": null,
+  "comment": null
+ }
+}
