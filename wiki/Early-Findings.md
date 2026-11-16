@@ -1,6 +1,6 @@
 # Early Findings
 
-These came out of preparation: reading the plugin, checking claims against Anthropic's documentation, and testing the logging. None of them is a pilot result. Several changed the design.
+These came out of preparation: reading the plugin, checking claims against Anthropic's documentation, and testing the logging. None of them is a scored result; those are on the [Results](Results) page. Several changed the design.
 
 ## From reading the plugin
 

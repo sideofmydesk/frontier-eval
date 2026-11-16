@@ -1,6 +1,6 @@
 **Six slides, two minutes.** Each slide is a 1600×900 image you can save and drop into your own deck. The bullets beneath each one are the talking points. Click a slide to open the detail behind it.
 
-> **Status (15 November 2026): pilot in preparation.** The method is built and proven on real runs. The scored pilot has not run, so slide 6 is still a question.
+> **Status (November 2026): the first study is done.** 120 reviews of 15 real pull requests. Slide 6 has the answer, the [Results](Results) page has every chart, and the [paper](https://research.sideofmydesk.com/edition-1/) has the full account. Read it as a first look.
 
 ---
 
@@ -26,7 +26,7 @@
 
 - **A decision before you upgrade.** When a model ships, know whether to keep, retune, or drop a plugin.
 - **Proof of which model did the work.** Quality and cost are attributed to the model that actually answered.
-- **A small bill.** The whole pilot runs under a $150 ceiling. One plugin review cost about 78 cents.
+- **A small bill.** The whole first study, 120 reviews with grading, cost about $136.
 
 *Detail: [Learnings and Next Steps](Learnings-and-Next-Steps)*
 
@@ -43,25 +43,26 @@
 
 ---
 
-[![What we have found so far: 3 models did the work in one single-model review; 1 versus 12 issues reported by plugin and plain prompt; 0 warnings when a different model answered; a plugin review cost 2.6 times a plain one.](images/slide-5-findings.png)](Early-Findings)
+[![What we saw while setting up: 3 models did the work in one single-model review; 1 versus 12 issues reported by plugin and plain prompt; 0 warnings when a different model answered; a plugin review cost 2.6 times a plain one.](images/slide-5-findings.png)](Early-Findings)
 
 - **The plugin picks its own models.** We chose one model for a review. The plugin sent the work to three.
 - **The plugin is selective; a plain prompt is thorough.** On one pull request with 6 known issues, the plugin reported 1 and the plain prompt reported 12.
 - **The tool did not flag a model switch.** In testing, its own summary credited the model we asked for when a different one answered.
 - **The plugin costs more.** About 2.6 times a plain review on the same pull request.
 
-These are early observations from set-up runs on one pull request. They are not pilot results.
+These are observations from set-up runs on one pull request. The scored results are on slide 6.
 
 *Detail: [Early Findings](Early-Findings)*
 
 ---
 
-[![The result we are waiting for: does the plugin help less on the newer model? Claude Opus 5.5 versus Claude Fable 5.2. Results pending.](images/slide-6-result.png)](Results)
+[![The result: without the plugin, each model found about twice as many known issues. Claude Opus 5.5: 31% with the plugin, 66% without. Claude Fable 5.2: 32% with, 73% without. The hypothesis is partly supported.](images/slide-6-result.png)](Results)
 
-- **The measure:** how much better review is with the plugin than without it, on each model.
-- **The prediction:** if plugins age badly, the plugin helps less on the newer model.
-- **The test:** 120 reviews of 15 real pull requests, across both models.
-- **Not yet run.** This slide will be replaced with the answer.
+- **Without the plugin, each model found about twice as many of the known issues.** 31% against 66% on Opus 5.5, and 32% against 73% on Fable 5.2.
+- **The plugin says little, and is right more often.** About 2 findings per review against about 10, and more of them matched a known issue.
+- **The plugin cost about 1.5 times as much per review.**
+- **Plugins age badly? Partly supported.** The plugin's one advantage was clearly smaller on the newer model. The gap in issues found could be chance.
+- **A first look.** 15 pull requests, one plugin, two models, graded by an AI.
 
 *Detail: [Results](Results)*
 
@@ -73,7 +74,7 @@ These are early observations from set-up runs on one pull request. They are not 
 2. When we upgrade a model, do our plugins use it, or do they name their own?
 3. If a request were answered by a different model than the one we selected, would we know?
 4. Do we want an AI reviewer that says little and is usually right, or one that says a lot and needs filtering?
-5. What would it cost us to answer these with a measurement? Here it was under $150.
+5. What would it cost us to answer these with a measurement? Here it was about $136.
 
 ## Go deeper
 

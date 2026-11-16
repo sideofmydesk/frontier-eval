@@ -26,5 +26,5 @@ Start at **[For AI Evaluators](For-AI-Evaluators)**.
 
 | Page | Why read it |
 |---|---|
-| [Results](Results) | Pilot results. A placeholder until the pilot has run. |
+| [Results](Results) | Results of the first study, with every chart and the limits. |
 | [Learnings and Next Steps](Learnings-and-Next-Steps) | What we learned about method, and what comes next |

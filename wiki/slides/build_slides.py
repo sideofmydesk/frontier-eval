@@ -67,7 +67,7 @@ h1.big{font-size:96px;max-width:1300px}
 LOGO = """<svg width="34" height="34" viewBox="0 0 28 28"><rect x="2" y="15" width="24" height="3" rx="1.5" fill="#0b0b0b"/><rect x="5" y="18" width="2.5" height="8" rx="1" fill="#0b0b0b"/><rect x="20.5" y="18" width="2.5" height="8" rx="1" fill="#0b0b0b"/><rect x="14" y="5" width="9" height="10" rx="1" fill="none" stroke="#0b0b0b" stroke-width="2"/><path d="M16.5 8.5h4M16.5 11.5h4" stroke="#0b0b0b" stroke-width="1.6" stroke-linecap="round"/></svg>"""
 
 
-def foot(n, right="Pilot in preparation \u00b7 November 2026"):
+def foot(n, right="First study complete \u00b7 November 2026"):
     return f'<div class="foot"><div class="brand">{LOGO}<span><b>FrontierEval</b> \u00b7 Side of My Desk</span></div><div>{right} \u00b7 {n} / 6</div></div>'
 
 
@@ -101,7 +101,7 @@ SLIDES = [
   <div class="cards c3">
     <div class="card"><div class="bar"></div><h3>A decision before you upgrade</h3><p>When a model ships, know whether to keep, retune, or drop a plugin. Evidence in place of impressions.</p></div>
     <div class="card"><div class="bar"></div><h3>Proof of which model did the work</h3><p>Every request is recorded: the model asked for and the model that answered. Quality and cost are attributed correctly.</p></div>
-    <div class="card"><div class="bar"></div><h3>A small bill</h3><p>The whole pilot runs under a $150 ceiling. One plugin review cost about 78 cents.</p></div>
+    <div class="card"><div class="bar"></div><h3>A small bill</h3><p>The whole first study, 120 reviews with grading, cost about $136.</p></div>
   </div>
 </div>
 {foot(3)}"""),
@@ -120,7 +120,7 @@ SLIDES = [
 {foot(4)}"""),
 
     ("5-findings", f"""
-<div class="kicker"><i></i>What we have found so far</div>
+<div class="kicker"><i></i>What we saw while setting up</div>
 <h1>Four things we did not expect</h1>
 <div class="grow">
   <div class="cards c4">
@@ -134,18 +134,15 @@ SLIDES = [
 {foot(5)}"""),
 
     ("6-result", f"""
-<div class="kicker"><i></i>The result we are waiting for</div>
-<h1>Does the plugin help less on the newer model?</h1>
+<div class="kicker"><i></i>The result</div>
+<h1>Without the plugin, each model found about twice as many known issues.</h1>
 <div class="grow">
   <div class="pair">
-    <div class="card"><div class="tag">Released before the plugin's instructions</div><h3>Claude Opus 5.5</h3><div class="q" style="margin-top:18px">?</div><p>How much better is review with the plugin than without it</p></div>
-    <div class="vs">vs</div>
-    <div class="card"><div class="tag">Released after the plugin's instructions</div><h3>Claude Fable 5.2</h3><div class="q" style="margin-top:18px">?</div><p>The same measure, on the newer model</p></div>
+    <div class="card"><div class="tag">Released before the plugin's instructions</div><h3>Claude Opus 5.5</h3><div class="num" style="margin-top:18px">31% <small>vs</small> 66%</div><p>Known issues found: with the plugin vs without it</p></div>
+    <div class="vs"></div>
+    <div class="card"><div class="tag">Released after the plugin's instructions</div><h3>Claude Fable 5.2</h3><div class="num" style="margin-top:18px">32% <small>vs</small> 73%</div><p>Known issues found: with the plugin vs without it</p></div>
   </div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:30px">
-    <div class="note" style="font-size:24px;margin:0;max-width:1050px">If plugins age badly, the left number is larger than the right. 120 reviews of 15 real pull requests will tell us.</div>
-    <div class="pending"><i></i>Results pending</div>
-  </div>
+  <div class="callout" style="margin-top:30px;font-size:26px">Plugins age badly? Partly supported. <span>The plugin's one advantage, being right more often, was clearly smaller on the newer model. The gap in issues found could be chance. A first look: 120 reviews of 15 pull requests.</span></div>
 </div>
 {foot(6)}"""),
 ]
