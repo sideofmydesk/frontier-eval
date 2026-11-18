@@ -12,6 +12,7 @@ This repository holds the testing programs, the results for every review, and th
 
 - Summary and charts: https://research.sideofmydesk.com/edition-1/
 - Paper: [`paper/paper.pdf`](paper/paper.pdf)
+- Video walkthrough: https://youtu.be/nSp_vWTHrMI
 
 Fifteen real pull requests were each reviewed with and without the plugin, on Claude Opus 5.5 and Claude Fable 5.2, twice each: 120 reviews.
 
